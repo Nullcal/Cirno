@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="jp" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cirno</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="client.js" charset="utf-8"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/master.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="transitionPanels">
+        <div class="transitionPanel dfrom"></div>
+        <div class="transitionPanel dto"></div>
+      </div>
+      <!--ログイン-->
+      <div class="display welcome">
+        <img class="logoSvg" src="./img/logo.svg" alt="ロゴだよ〜">
+        <div class="loginForm">
+          <span class="info">チーム</span>
+          <div class="teamSelect">
+            <select id="teamId" name=""></select>
+          </div>
+          <button id="login" type="button">ゲームに参加！</button>
+        </div>
+        <span class="copyright">(C) 2022 学年企画実行委員&<a href="https://www.youtube.com/channel/UC4ECrg9RRqlILVuZfGF8niw" target="_blank" rel="noopener noreferrer">ぬるかる★ガヴちゃんのパンツ＠6r-2</a></span>
+        <!--ログイン失敗-->
+        <div class="loginFailed">
+          <div class="popup">
+            <span class="title">ログインに失敗しました</span>
+            <span class="info">チームは既にログイン中です。<br>ERROR:USER_ALREADY_EXIST</span>
+            <button id="closepopup" type="button">閉じる</button>
+          </div>
+        </div>
+      </div>
+      <!--待機画面-->
+      <div class="display waitroom">
+        <div class="logoContainer">
+          <img class="logoSvg" src="./img/logo.svg" alt="ロゴだよ〜">
+        </div>
+        <div class="whitebg">
+          <span class="sinfo"></span>
+          <span class="wscore"></span>
+          <span class="plzwait">---開始までお待ちください---</span>
+          <button id="logout" type="button">退出</button>
+          <button id="tmpStart" type="button">開始(仮)</button>
+        </div>
+        <span class="copyright">(C) 2022 学年企画実行委員&<a href="https://www.youtube.com/channel/UC4ECrg9RRqlILVuZfGF8niw" target="_blank" rel="noopener noreferrer">ぬるかる★ガヴちゃんのパンツ＠6r-2</a></span>
+        <!--ゲーム開始失敗-->
+        <div class="loginFailed">
+          <div class="popup">
+            <span class="title">ゲームの開始に失敗しました</span>
+            <span class="info">ゲームは既に実行中です。<br>ERROR:SESSION_ALREADY_STARTED</span>
+            <button class="closepopup" type="button">閉じる</button>
+          </div>
+        </div>
+      </div>
+      <!--開始表示-->
+      <div class="display startview">
+        <span class="bigtitle">GO!</span>
+      </div>
+      <!--投票画面-->
+      <div class="display voteview">
+        <div class="tVote">
+          <div class="questInfo">
+            <span class="tQnum"></span>
+            <span class="tQuest"></span>
+          </div>
+          <div class="tRadioForm">
+            <span class="tSubtitle">どれにつかう？<span class="tSmallInfo">(スクロールできます)</span></span>
+            <form class="optContainer"></form>
+          </div>
+          <div class="tAmountForm">
+            <span class="tSubtitle">何ポイントつかう？</span>
+            <span class="tBetVal">0P</span>
+            <input id="rBetVal" type="range" name="" value="10" step="10" min="10">
+          </div>
+        </div>
+        <div class="infopanelbtm">
+          <div class="score">
+            <span class="tScoreInfo">現在のポンイト</span>
+            <span class="tScoreVal"></span>
+          </div>
+          <div class="timer">
+            <div class="timerFrame">
+              <span class="tTimerInfo">残り時間</span>
+              <span class="tTimerVal">待機中</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--終了表示-->
+      <div class="display timeisup">
+        <span class="tMain">結果発表！！</span>
+      </div>
+    </div>
+  </body>
+</html>
