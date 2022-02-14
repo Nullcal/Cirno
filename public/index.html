@@ -2,7 +2,7 @@
 <html lang="jp" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Cirno</title>
+    <title>ポイントアップチャンス - 13th学年企画</title>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="client.js" charset="utf-8"></script>
@@ -26,6 +26,7 @@
             <select id="teamId" name=""></select>
           </div>
           <button id="login" type="button">ゲームに参加！</button>
+          <a href="/admin">学年企画委員の方はこちら</a>
         </div>
         <span class="copyright">(C) 2022 学年企画実行委員&<a href="https://www.youtube.com/channel/UC4ECrg9RRqlILVuZfGF8niw" target="_blank" rel="noopener noreferrer">ぬるかる★ガヴちゃんのパンツ＠6r-2</a></span>
         <!--ログイン失敗-->
@@ -33,7 +34,7 @@
           <div class="popup">
             <span class="title">ログインに失敗しました</span>
             <span class="info">チームは既にログイン中です。<br>ERROR:USER_ALREADY_EXIST</span>
-            <button id="closepopup" type="button">閉じる</button>
+            <button class="closepopup" type="button">閉じる</button>
           </div>
         </div>
       </div>
@@ -46,8 +47,8 @@
           <span class="sinfo"></span>
           <span class="wscore"></span>
           <span class="plzwait">---開始までお待ちください---</span>
+          <span class="plzwaitntc">ゲームの最中はページを閉じないでください</span>
           <button id="logout" type="button">退出</button>
-          <button id="tmpStart" type="button">開始(仮)</button>
         </div>
         <span class="copyright">(C) 2022 学年企画実行委員&<a href="https://www.youtube.com/channel/UC4ECrg9RRqlILVuZfGF8niw" target="_blank" rel="noopener noreferrer">ぬるかる★ガヴちゃんのパンツ＠6r-2</a></span>
         <!--ゲーム開始失敗-->
@@ -88,14 +89,111 @@
           <div class="timer">
             <div class="timerFrame">
               <span class="tTimerInfo">残り時間</span>
-              <span class="tTimerVal">待機中</span>
+              <span class="tTimerVal">99:99</span>
             </div>
           </div>
         </div>
       </div>
       <!--終了表示-->
       <div class="display timeisup">
-        <span class="tMain">結果発表！！</span>
+        <span class="bigtitle">集計中...</span>
+      </div>
+      <!--結果表示-->
+      <div class="display resultview">
+        <div class="tResult">
+          <div class="questInfo">
+            <span class="tQnum"></span>
+            <span class="tQuest"></span>
+          </div>
+          <div class="tAnswer taPanel">
+            <span class="tSubtitle">正解は？</span>
+            <div class="answerBox">
+              <span class="taCateam">10チーム正解！</span>
+              <span class="taTitle">特急成田エクスプレス</span>
+              <span class="taMagnif">x2525.2</span>
+            </div>
+          </div>
+          <div class="tCalc taPanel">
+            <span class="tSubtitle taResult">おめでとう！</span>
+            <div class="correct">
+              <div class="tasBox tasAmount">
+                <span class="tasBoxInfo">つかったポイント</span>
+                <span class="tasBoxValue tasAmountVal">25252P</span>
+              </div>
+              <div class="tasBox tasOpera">
+                <span class="tasBoxOpera">×</span>
+              </div>
+              <div class="tasBox tasMagnif">
+                <span class="tasBoxInfo">倍率</span>
+                <span class="tasBoxValue tasMagnifVal">2.0</span>
+              </div>
+              <div class="tasBox tasOpera">
+                <span class="tasBoxOpera">=</span>
+              </div>
+            </div>
+            <div class="getScore">
+              <span class="tasBoxInfo">もらったポイント</span>
+              <span class="tasBoxValue tasGetScore">50504P</span>
+            </div>
+            <span class="taRank">現在99位</span>
+            <span class="tqInfo">次の問題の開始までしばらくお待ちください</span>
+          </div>
+          <div class="tainfopanelbtm">
+            <div class="tascore">
+              <span class="tatScoreInfo">現在のポンイト</span>
+              <span class="tatScoreVal">10000P</span>
+            </div>
+            <div class="tasBalloon">
+              <div class="taBalloon">+123456</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--最終結果表示-->
+      <div class="display finalview">
+        <div class="fPodiumBox">
+          <div class="fPodiumTitle">
+            <span class="fTitle">最終結果</span>
+          </div>
+          <div class="fPodium">
+            <div id="pod2" class="fpNd fpSingle">
+              <span class="fpTeamname">C1</span>
+              <span class="fpPlace">2nd</span>
+              <span class="fpScore">31415P</span>
+            </div>
+            <div id="pod1" class="fpSt fpSingle">
+              <span class="fpTeamname">C2</span>
+              <span class="fpPlace">1st</span>
+              <span class="fpScore">564219P</span>
+            </div>
+            <div id="pod3" class="fpRd fpSingle">
+              <span class="fpTeamname">D1</span>
+              <span class="fpPlace">3rd</span>
+              <span class="fpScore">9265P</span>
+            </div>
+          </div>
+        </div>
+        <div class="fFinalScore">
+          <span class="tRank">あなたは<span class="tRankBig">3.14</span>位でした</span>
+          <span class="tScoreInfo">-最終スコア-</span>
+          <span class="tScore">12345P</span>
+        </div>
+        <div class="fTotalScore">
+          <div class="fsbBox">
+            <div class="fScoreBox">
+              <span class="fScoreInfo tpScoreInfo">チームC2のスコア</span>
+              <span class="fScore tpScore">12345P</span>
+            </div>
+            <div class="fScoreBox">
+              <span class="fScoreInfo ttScoreInfo">合計</span>
+              <span class="fScore ttScore">67890P</span>
+            </div>
+          </div>
+          <div class="tyfp">
+            <img class="tyLogo" src="./img/logo.svg" alt="ロゴだよ〜">
+            <span class="tySpan">Thank you for playing!</span>
+          </div>
+        </div>
       </div>
     </div>
   </body>

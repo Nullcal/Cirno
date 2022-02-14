@@ -67,6 +67,12 @@ html, body, .wrapper, .display {
   opacity: .8;
 }
 
+.loginForm a {
+  margin-top: 16px;
+  font-size: 28px;
+  color: white;
+}
+
 .loginForm select {
   width: 420px;
   height: 320px;
@@ -96,6 +102,7 @@ html, body, .wrapper, .display {
   color: white;
   cursor: pointer;
   transition: .2s;
+  white-space: nowrap;
 }
 .loginForm button:active {
   background: rgba(255, 255, 255, .5);
@@ -355,8 +362,13 @@ html, body, .wrapper, .display {
 .whitebg .plzwait {
   font-size: 36px;
   color: var(--subcolor);
-  margin-bottom: 10%;
+  margin-bottom: 16px;
   margin-top: 3%;
+}
+.whitebg .plzwaitntc {
+  font-size: 28px;
+  margin-bottom: 10%;
+  color: var(--subcolor);
 }
 
 .whitebg button {
@@ -417,6 +429,7 @@ html, body, .wrapper, .display {
 }
 .voteview .tQuest {
   font-size: 72px;
+	font-family: "Nicomoji", sans-serif;
   text-align: center;
 }
 
@@ -591,4 +604,436 @@ html, body, .wrapper, .display {
 
 .timeisup {
   display: none;
+}
+
+.timeisup .bigtitle {
+	font-family: "Nicomoji", sans-serif;
+  font-size: 200px;
+  font-weight: 400;
+  color: white;
+}
+
+
+
+.resultview {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.tResult {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.resultview .questInfo {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.resultview .tQnum {
+  font-size: 48px;
+}
+.resultview .tQuest {
+  font-size: 72px;
+	font-family: "Nicomoji", sans-serif;
+  text-align: center;
+}
+
+.resultview .taPanel {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.resultview .tCalc {
+	margin-top: 24px;
+	height: calc(60% - 369px - 72px);
+	overflow-y: scroll;
+}
+.resultview .tSubtitle {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  transform: translateX(calc(-50vw + 50% + 36px));
+  font-size: 48px;
+	color: white;
+}
+.resultview .answerBox {
+	width: calc(100% - 96px);
+	padding: 16px;
+	border-radius: 48px;
+	background: white;
+	box-shadow: 2px 2px 8px rgba(0,0,0,.4), -2px -2px 8px rgba(255,255,255,.4);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.answerBox * {
+	width: 100%;
+}
+.answerBox .taCateam {
+	font-size: 36px;
+	text-align: right;
+}
+.answerBox .taTitle {
+	font-size: 72px;
+	font-weight: 500;
+	text-align: center;
+}
+.answerBox .taMagnif {
+	font-size: 36px;
+	text-align: center;
+}
+
+.resultview .correct {
+	width: calc(100% - 64px);
+	color: rgba(255,255,255,.6);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.resultview .tasBox {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.resultview .tasAmount {
+	width: 55%;
+}
+.resultview .tasMagnif {
+	width: 25%;
+}
+.resultview .tasOpera {
+	align-items: center;
+  justify-content: flex-end;
+	width: 10%;
+}
+
+.tasBox .tasBoxInfo {
+	font-size: 28px;
+}
+.tasBox .tasBoxValue {
+	width: 100%;
+	height: 120px;
+	text-align: center;
+	border-radius: 16px;
+	border: 2px solid rgba(255,255,255,.6);
+	font-size: 96px;
+	line-height: 120px;
+}
+.tasBox .tasBoxOpera {
+	height: 124px;
+	margin-top: 38px;
+	text-align: center;
+	font-size: 96px;
+	font-weight: 100;
+}
+.resultview .taRank {
+  margin-top: 24px;
+  margin-bottom: 12px;
+	text-align: right;
+	width: calc(100% - 64px);
+  font-size: 48px;
+	color: white;
+}
+.resultview .tqInfo {
+  font-size: 36px;
+	color: white;
+	text-align: center;
+}
+
+.getScore {
+	width: calc(100% - 64px);
+	color: white;
+  display: flex;
+  justify-content: center;
+	align-items: center;
+  flex-direction: column;
+}
+.getScore .tasBoxInfo {
+	font-size: 36px;
+}
+.getScore .tasBoxValue {
+	width: 100%;
+	height: 168px;
+	text-align: center;
+	border-radius: 32px;
+	border: 2px solid rgba(255,255,255,.6);
+	font-size: 144px;
+	line-height: 172px;
+	color: white;
+}
+.resultview .tainfopanelbtm {
+  position: absolute;
+  bottom: 24px;
+  width: calc(100% - 48px);
+  height: 20%;
+  border-radius: 64px;
+  background: rgba(255, 255, 255, .8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tainfopanelbtm .tascore {
+  width: 60%;
+  height: 100%;
+  padding-left: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.tainfopanelbtm .tatScoreInfo {
+	width: 100%;
+	text-align: left;
+  display: block;
+  font-size: 36px;
+  margin-bottom: 16px;
+  color: var(--subcolor);
+}
+.tainfopanelbtm .tatScoreVal {
+	width: 100%;
+	text-align: center;
+  margin-bottom: 36px;
+  font-size: 128px;
+  line-height: 96px;
+}
+
+.tasBalloon {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.taBalloon {
+	position: relative;
+  display: inline-block;
+  padding: 0 5px;
+  width: 156px;
+  height: 156px;
+  line-height: 156px;
+  text-align: center;
+  color: #FFF;
+  font-size: 32px;
+  font-weight: bold;
+  background: var(--subcolor);
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.taBalloon:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -40px;
+  margin-top: -25px;
+  border: 25px solid transparent;
+  border-right: 25px solid var(--subcolor);
+  z-index: 0;
+}
+
+
+
+.finalview {
+	font-family: sans-serif;
+  display: none;
+	justify-content: flex-start;
+}
+.finalview .fPodiumBox {
+	width: 100%;
+	height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.finalview .fTitle {
+	font-size: 96px;
+	font-family: "Nicomoji", sans-serif;
+	color: white;
+}
+.finalview .fPodiumTitle {
+	height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.finalview .fPodium {
+	width: 100%;
+	height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.fPodium .fpSingle {
+	position: relative;
+	width: 33%;
+	background: rgba(255, 255, 255, .3);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.fPodium .fpSt {
+	width: 34%;
+	height: 70%;
+	box-shadow: 0 32px 32px rgba(0,0,0,0.3);
+}
+.fPodium .fpNd {
+	height: 55%;
+}
+.fPodium .fpRd {
+	height: 40%;
+}
+
+.fpSt .fpTeamname {
+	top: -204px;
+	font-size: 168px;
+}
+.fpNd .fpTeamname, .fpRd .fpTeamname {
+	top: -160px;
+	font-size: 128px;
+}
+.fpSingle .fpTeamname {
+	position: absolute;
+	color: white;
+}
+
+.fpSingle .fpScore {
+	margin-top: 16px;
+	font-size: 54px;
+}
+
+.fpSt .fpPlace {
+	background-image: linear-gradient(-15deg, #ffd261 50%, #ffe6a6 50%);
+	box-shadow: 0 8px 24px rgb(255, 238, 194);
+}
+.fpNd .fpPlace {
+	background-image: linear-gradient(-15deg, #c7c7c7 50%, #e4e0e0 50%);
+	box-shadow: 0 8px 24px rgb(228, 224, 224);
+}
+.fpRd .fpPlace {
+	background-image: linear-gradient(-15deg, #ffa97e 50%, #ffc5a8 50%);
+	box-shadow: 0 8px 24px rgb(255, 213, 191);
+}
+.fpSingle .fpPlace {
+	margin-top: 16px;
+	font-size: 48px;
+	line-height: 60px;
+	width: 144px;
+	text-align: center;
+	border-radius: 36px;
+}
+
+.finalview .fFinalScore {
+	position: relative;
+	width: 100%;
+	height: 25%;
+	background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+	overflow-y: scroll;
+}
+.fFinalScore .tRank {
+	font-size: 48px;
+}
+.fFinalScore .tRankBig {
+	margin: 0 16px;
+	font-size: 96px;
+	line-height: 96px;
+}
+.fFinalScore .tScoreInfo {
+	font-size: 36px;
+}
+.fFinalScore .tScore {
+	font-size: 144px;
+	font-weight: 400;
+	line-height: 128px;
+	padding: 16px 10%;
+	border-radius: 32px;
+	border: 2px solid var(--subcolor);
+}
+
+.finalview .fTotalScore {
+	width: 100%;
+	height: 25%;
+	background: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+	color: white;
+}
+.fTotalScore .fsbBox {
+	width: 50%;
+	height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.fTotalScore .fScoreBox {
+	width: 100%;
+	height: 48%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.fScoreBox>* {
+	width: 100%;
+}
+.fScoreBox .fScoreInfo {
+	font-size: 36px;
+	padding-left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.fScoreBox .fScore {
+	width: 90%;
+	text-align: center;
+	font-size: 96px;
+	line-height: 96px;
+	padding: 8px 0;
+	border-radius: 32px;
+	border: 2px solid white;
+}
+.ttScore {
+	font-weight: 500;
+}
+
+.fTotalScore .tyfp {
+	width: 50%;
+	height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.tyLogo {
+	width: 80%;
+	max-height: 50%;
+}
+.tySpan {
+	margin-top: 24px;
+	font-size: 32px;
 }
