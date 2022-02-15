@@ -22,9 +22,28 @@ html, body, .wrapper, .display {
   font-family: sans-serif;
 }
 
-/* 背景 */
+/* 背景
 .wrapper {
   background-image: linear-gradient(60deg, #ff6b00, #ffb800);
+}
+*/
+.wrapper {
+	background-color: #ffb600;
+	background-size: 200%;
+  background-image: repeating-linear-gradient(-45deg, #ffb200, #ffb200 36px,transparent 0, transparent 72px);
+	animation-name: bgani;
+	animation-duration: 1.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@keyframes bgani{
+  0%{
+    background-position: 0px;
+  }
+  100%{
+		background-position: -100px;
+  }
 }
 
 .display {
@@ -36,6 +55,12 @@ html, body, .wrapper, .display {
   align-items: center;
   flex-direction: column;
   color: var(--subcolor);
+}
+
+button {
+	font-weight: 500;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 
@@ -339,7 +364,8 @@ html, body, .wrapper, .display {
   width: calc(100% - 48px);
   height: 70%;
   border-radius: 64px;
-  background: rgba(255, 255, 255, .8);
+	background: white;
+	box-shadow: 2px 2px 8px rgba(0,0,0,.4), -2px -2px 8px rgba(255,255,255,.4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -439,6 +465,7 @@ html, body, .wrapper, .display {
   margin-bottom: 12px;
   transform: translateX(calc(-50vw + 50% + 36px));
   font-size: 36px;
+	color: white;
 }
 .voteview .tSmallInfo {
   font-size: 24px;
@@ -483,6 +510,8 @@ html, body, .wrapper, .display {
   color: white;
   opacity: .6;
   transition: .2s;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 .optionLabel .tOptName {
   position: absolute;
@@ -536,7 +565,8 @@ html, body, .wrapper, .display {
   width: calc(100% - 48px);
   height: 20%;
   border-radius: 64px;
-  background: rgba(255, 255, 255, .8);
+	background: white;
+	box-shadow: 2px 2px 8px rgba(0,0,0,.4), -2px -2px 8px rgba(255,255,255,.4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -785,7 +815,8 @@ html, body, .wrapper, .display {
   width: calc(100% - 48px);
   height: 20%;
   border-radius: 64px;
-  background: rgba(255, 255, 255, .8);
+	background: white;
+	box-shadow: 2px 2px 8px rgba(0,0,0,.4), -2px -2px 8px rgba(255,255,255,.4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -865,7 +896,12 @@ html, body, .wrapper, .display {
 }
 .finalview .fTitle {
 	font-size: 96px;
+	font-weight: 500;
 	font-family: "Nicomoji", sans-serif;
+	color: white;
+}
+.finalview .fSubTitle {
+	font-size: 36px;
 	color: white;
 }
 .finalview .fPodiumTitle {
@@ -873,6 +909,7 @@ html, body, .wrapper, .display {
   display: flex;
   justify-content: center;
   align-items: center;
+	flex-direction: column;
 }
 .finalview .fPodium {
 	width: 100%;
@@ -885,6 +922,8 @@ html, body, .wrapper, .display {
 	position: relative;
 	width: 33%;
 	background: rgba(255, 255, 255, .3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   display: flex;
   justify-content: flex-start;
   align-items: center;
