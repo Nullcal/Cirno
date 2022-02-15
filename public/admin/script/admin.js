@@ -250,6 +250,22 @@ $(function() {
     a.href = url;
     //
     socket.emit("refreshPod");
+    // ログイン状況管理
+    let teamlist = dispcsv.replace(/\r/g, "").split("\n");
+    for (var i = 0; i < teamlist.length; i++) {
+      let tname = teamlist[i].split(",")[0];
+      $(".adLogin").append(`<span id="ls${tname}" class="loginname">${tname}</span>`);
+    }
+    //
+    socket.emit("getLoginStatus");
+  });
+
+  // ログイン状況更新
+  socket.on("resLoginStatus", function(status) {
+    $(".alreadyl").removeClass("alreadyl");
+    for (var i = 0; i < status.length; i++) {
+      $(`#ls${status[i]}`).addClass("alreadyl");
+    }
   });
 
   // 最終結果表示
@@ -265,7 +281,6 @@ $(function() {
     $(".adPodi").empty();
     //
     for (var i = 0; i < data.rank.length; i++) {
-      console.log(data.rank[i]);
       let thisname = data.rank[i][0];
       let thisscore = data.rank[i][1];
       //

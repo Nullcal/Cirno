@@ -192,7 +192,7 @@ $(function() {
 
   // 順位更新
   socket.on("refreshRank", function(rank, correctts) {
-    $(".taRank").text(`現在${rank}位`);
+    $(".taRank").text(`${correctts[1]}チーム中${rank}位`);
     $(".taCateam").text(`${correctts[1]}チーム中${correctts[0]}チームが正解！`);
   });
 

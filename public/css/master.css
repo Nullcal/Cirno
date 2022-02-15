@@ -74,6 +74,7 @@ html, body, .wrapper, .display {
 }
 
 .loginForm select {
+	appearance: none;
   width: 420px;
   height: 320px;
   outline: none;

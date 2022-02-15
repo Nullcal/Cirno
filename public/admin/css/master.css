@@ -385,6 +385,18 @@ body {
 
 
 
+.readmer {
+	width: 90%;
+	height: 480px;
+	overflow-y: scroll;
+}
+.information p {
+	font-size: 32px;
+	text-align: center;
+}
+
+
+
 .timerControl .qTimerBox {
   position: relative;
   width: 100%;
@@ -452,6 +464,32 @@ body {
 }
 .slScoreBox input:hover {
 	background: #efefef;
+}
+
+
+
+.adLogin {
+	width: 90%;
+	align-content: flex-start;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.loginname {
+	display: block;
+	width: 30%;
+	height: 90px;
+	margin: 8px 1.5%;
+	border-radius: 16px;
+	background: white;
+	text-align: center;
+	line-height: 90px;
+	font-size: 48px;
+	transition: .2s;
+}
+.loginname.alreadyl {
+	background: #CABBE9;
+	color: white;
+	font-weight: 500;
 }
 
 

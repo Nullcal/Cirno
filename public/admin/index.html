@@ -27,13 +27,48 @@
           <button id="login" type="button" name="send">ログイン</button>
         </form>
       </div>
-      <span class="copyright">(C) 2022 学年企画実行委員&<a href="https://www.youtube.com/channel/UC4ECrg9RRqlILVuZfGF8niw" target="_blank" rel="noopener noreferrer">ぬるかる★ガヴちゃんのパンツ＠6r-2</a></span>
+      <span class="copyright">(C) 2022 学年企画実行委員&<a href="https://www.youtube.com/channel/UC4ECrg9RRqlILVuZfGF8niw" target="_blank" rel="noopener noreferrer">ぬるかる</a></span>
     </div>
     <div class="settingPanel panel vertflex">
       <span class="title">ゲーム設定</span>
       <button class="mainButton" id="startGame" type="button" name="button" disabled>ゲーム開始</button>
       <button class="mainButton" id="forceTerminate" type="button" name="button" disabled>ゲームを強制終了</button>
       <button class="mainButton" id="forcePodium" type="button" name="button">最終結果へ移動</button>
+      <div class="ctrlPanel information vertflex">
+        <span class="ctrlTitle">README.MD</span>
+        <hr>
+        <div class="readmer">
+          <p>---ご使用の前にお読みください---</p>
+          <p>★このページについて★</p>
+          <p>原則同時にログインするのは一人までにしてください。予期せぬ不具合に繋がる可能性があります。</p>
+          <p>★ゲームの進行について★</p>
+          <p>ゲーム中にページをリロードしないこと、コンソール画面にコードを入力しないことを参加者に伝えてください。不具合の原因になります。</p>
+          <p>初めにすべてのチームがログインしていることを確認してください。</p>
+          <p>その後は出題する問題を随時選択してゲームを開始してください。</p>
+          <p>すべての問題が出題し終わったら最終結果へ移動ボタンをタップしてください。各チームに上位3位、ペア、自チームの得点・順位が表示されます。</p>
+          <p>★問題について★</p>
+          <p>問題・タイマーの内容を変更した際は、カテゴリー下部のボタンから必ずデータの保存を行なってください。</p>
+          <p>問題の答えは選択肢の倍率の左横にある空白のボタンをタップすることで設定できます（紫色にハイライトされます。）</p>
+          <p>各問題・選択肢はバツボタンをタップすることで削除できます。操作は取り消せません。</p>
+          <p>使用する問題の"この問題を使用"ボタンをタップした上でページ上部のゲーム開始よりゲームを開始します。</p>
+          <p>★制限時間について★</p>
+          <p>秒単位で設定してください。変更後はセーブを忘れずに行なってください。</p>
+          <p>必要に応じてボタンにて問題を強制終了することができます。なお結果は保存されます。</p>
+          <p>★ログイン状況について★</p>
+          <p>ログイン状況パネルから各チームのログイン状況が確認できます（ログイン済みのチームは紫色にハイライトされます）。</p>
+          <p>ログイン漏れのないことを確認してからゲームを開始してください。ゲーム開始後に取り消しはできません。</p>
+          <p>★得点・順位について★</p>
+          <p>各チームの得点・総合順位は各パネルより確認ができます。なお得失点パネルから得点の操作は行えません。</p>
+          <p>★CSVファイルについて★</p>
+          <p>CSVファイルをアップロードすることで使用するチーム・得点を変更することができます。</p>
+          <p>ファイルのフォーマットを間違えるとシステムが正常に動作しません。ご注意ください。</p>
+          <p>アップロード完了後は自動で全クライアントがリロードされます。ゲームの最中の変更はお控えください。</p>
+          <p>ゲームの終了と同時にサーバー側のCSVファイルにデータが保存されます。新規ファイルアップロード後は一度ゲームを実行してください（念の為プレイヤーを１人以上入れて実行してください）。</p>
+          <p>サーバーに保存されているCSVファイルはダウンロードボタンからいつでもダウンロードが可能です。</p>
+          <p>★有事の際は★</p>
+          <p>万が一システムに不具合が発生した場合、不明な点がある場合はご連絡をお願いします。</p>
+        </div>
+      </div>
       <div class="ctrlPanel optionControl vertflex">
         <span class="ctrlTitle">問題・選択肢の設定</span>
         <hr>
@@ -49,6 +84,11 @@
           <span class="timerUnit">秒</span>
         </div>
         <button class="saveTchanges scButton" type="button" name="button">現在の設定を保存</button>
+      </div>
+      <div class="ctrlPanel loginman vertflex">
+        <span class="ctrlTitle">ログイン状況</span>
+        <hr>
+        <div class="adLogin vertflex"></div>
       </div>
       <div class="ctrlPanel scoreList vertflex">
         <span class="ctrlTitle">得失点一覧</span>

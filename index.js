@@ -87,6 +87,8 @@ io.on("connection", (socket) => {
       teamscore[socket.id] = score;
       io.to(socket.id).emit("loginSuccess", team, score);
       console.log(`\x1b[42mLOGIN \x1b[49m : ${team}(${socket.id})`);
+      //
+      io.emit("resLoginStatus", loginStatus);
     } else {
       io.to(socket.id).emit("loginFailed", team);
       console.log("LOGIN FAILED.");
@@ -254,6 +256,8 @@ io.on("connection", (socket) => {
       loginStatus.splice(teamIdx, 1);
       loginId.splice(teamIdx, 1);
     }
+    //
+    io.emit("resLoginStatus", loginStatus);
   }
 
   // 切断時の処理
@@ -333,6 +337,11 @@ io.on("connection", (socket) => {
     io.emit("referCsvCli");
     //
     newCsv = teamdata;
+  });
+
+  // ログイン状況取得
+  socket.on("getLoginStatus", function() {
+    io.emit("resLoginStatus", loginStatus);
   });
 
   // 最終結果表示
