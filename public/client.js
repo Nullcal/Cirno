@@ -116,12 +116,6 @@ $(function() {
   });
 
   // ゲーム開始表示
-  socket.on("failedLaunch", function() {
-    // ログイン失敗ポップアップ
-    showErrorPopup();
-  });
-
-  // ゲーム開始表示
   socket.on("startView", function() {
     transMove($(".waitroom"), $(".startview"), 0);
   });

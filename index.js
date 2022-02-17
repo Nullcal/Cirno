@@ -42,21 +42,20 @@ let teamdata = srccsv.split(/\r\n|\n/g);
 for (var i = 0; i < teamdata.length; i++) {
   teamdata[i] = teamdata[i].split(/,/);
 }
-console.log("Array!", srccsv, teamdata);
 
-let newCsv = teamdata;
+let newCsv = teamdata.slice();
 
 // 問題文読み込み
 let quest = JSON.parse(fs.readFileSync("./data/question.json", "utf8"))[0];
-console.log(quest);
+console.log(`\x1b[42mREAD_FILE\x1b[49m : ${quest})`);
 
 // タイマー読み込み
 let adtimer = JSON.parse(fs.readFileSync("./data/timer.json", "utf8"))[0];
-console.log(adtimer);
+console.log(`\x1b[42mREAD_FILE\x1b[49m : ${adtimer})`);
 
 // アドミンログイン情報読み込み
 let addata = JSON.parse(fs.readFileSync("./data/userdata.json", "utf8"))[0];
-console.log(addata);
+console.log(`\x1b[42mREAD_FILE\x1b[49m : ${addata})`);
 
 // 接続時の処理
 io.on("connection", (socket) => {
@@ -106,7 +105,7 @@ io.on("connection", (socket) => {
   socket.on("startReq", function(qNum) {
     anslgt = 0;
     //
-    if (true) {
+    if (loginStatus.length > 0) {
       console.log("Game start!");
       limIoEmit("startView"); // GO!の画面
       io.emit("unrestartable");
@@ -238,13 +237,15 @@ io.on("connection", (socket) => {
       //
       io.emit("referCsv", srccsv);
       //
-      newCsv = teamdata;
+      newCsv = teamdata.slice();
       //
-      setTimeout(function() {
-        limIoEmit("resultView");
-        io.emit("restartable");
-      }, 1000);
+      io.emit("showable");
     }
+  });
+
+  // 結果発表へ遷移
+  socket.on("reqResultView", function() {
+    limIoEmit("resultView");
   });
 
   // ログアウト処理
@@ -299,7 +300,7 @@ io.on("connection", (socket) => {
     console.log(`\x1b[44mAD_JSON\x1b[49m : Updated question.json by ${socket.id}`);
     // 問題文再読み込み
     quest = JSON.parse(fs.readFileSync("./data/question.json", "utf8"))[0];
-    console.log(quest);
+    console.log(`\x1b[42mREAD_FILE\x1b[49m : ${quest})`);
     //
     io.emit("savescc");
   });
@@ -310,7 +311,7 @@ io.on("connection", (socket) => {
     console.log(`\x1b[44mAD_JSON\x1b[49m : Updated timer.json by ${socket.id}`);
     // 問題文再読み込み
     adtimer = JSON.parse(fs.readFileSync("./data/timer.json", "utf8"))[0];
-    console.log(adtimer);
+    console.log(`\x1b[42mREAD_FILE\x1b[49m : ${adtimer})`);
     //
     io.emit("savescc");
   });
@@ -336,7 +337,7 @@ io.on("connection", (socket) => {
     io.emit("referCsv", srccsv);
     io.emit("referCsvCli");
     //
-    newCsv = teamdata;
+    newCsv = teamdata.slice();
   });
 
   // ログイン状況取得
@@ -349,7 +350,7 @@ io.on("connection", (socket) => {
     //
     let data = {};
     // チーム名と得点を得点順にソート
-    let ranking = teamdata.slice(0, -1);
+    let ranking = teamdata.slice();
     for (var i = 0; i < ranking.length; i++) {
       for (var j = ranking.length - 1; j > i; j--) {
         if (parseInt(ranking[j][1]) < parseInt(ranking[j-1][1])) {
@@ -362,7 +363,6 @@ io.on("connection", (socket) => {
     ranking.reverse();
     data.rank = ranking;
     //
-    console.log(data);
     //
     io.emit("finrView", data);
   });
@@ -373,7 +373,7 @@ io.on("connection", (socket) => {
     //
     let data = {};
     // チーム名と得点を得点順にソート
-    let ranking = teamdata.slice(0, -1);
+    let ranking = teamdata.slice();
     for (var i = 0; i < ranking.length; i++) {
       for (var j = ranking.length - 1; j > i; j--) {
         if (parseInt(ranking[j][1]) < parseInt(ranking[j-1][1])) {
@@ -385,8 +385,6 @@ io.on("connection", (socket) => {
     }
     ranking.reverse();
     data.rank = ranking;
-    //
-    console.log(data);
     //
     io.to(socket.id).emit("refreshPod", data);
   });

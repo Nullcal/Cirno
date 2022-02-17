@@ -92,7 +92,7 @@ button {
   opacity: .8;
 }
 
-.loginForm a {
+.loginForm a, .infoo {
   margin-top: 16px;
   font-size: 28px;
   color: white;
@@ -119,7 +119,8 @@ button {
 .loginForm button {
   width: 420px;
   height: 96px;
-  margin-top: 120px;
+  margin-top: 48px;
+  margin-bottom: 48px;
   border: none;
   border-radius: 48px;
   background: rgba(255, 255, 255, .2);
@@ -641,6 +642,12 @@ button {
 	font-family: "Nicomoji", sans-serif;
   font-size: 200px;
   font-weight: 400;
+  color: white;
+}
+
+.timeisup .subtitle {
+	margin-top: 36px;
+  font-size: 36px;
   color: white;
 }
 

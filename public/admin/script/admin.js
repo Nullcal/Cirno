@@ -80,6 +80,22 @@ $(function() {
     socket.emit("referCsv");
   });
 
+  // 集計中表示へ遷移
+  socket.on("showable", function() {
+    $("#showAnswer").attr("disabled", false);
+    $("#forceTerminate").attr("disabled", true);
+  });
+
+  // 結果表示へ遷移
+  $("#showAnswer").on("click", function() {
+    $("#showAnswer").attr("disabled", true);
+    socket.emit("reqResultView");
+    //
+    $("#startGame").attr("disabled", false);
+    // 順位更新
+    socket.emit("refreshPod");
+  });
+
   // 解答設定
   $(document).on("click", ".setAns", function() {
     let parent = $(this).parent();
@@ -190,14 +206,6 @@ $(function() {
     $("#forceTerminate").attr("disabled", false);
   });
 
-  // 重複起動防止
-  socket.on("restartable", function() {
-    $("#startGame").attr("disabled", false);
-    $("#forceTerminate").attr("disabled", true);
-    // 順位更新
-    socket.emit("refreshPod");
-  });
-
   // 一覧リセット
   socket.on("resetList", function(data) {
     console.log("reset");
@@ -239,7 +247,7 @@ $(function() {
 
   // csvを取得
   socket.on("referCsv", function(csv) {
-    let dispcsv = csv.slice(0, -1);
+    let dispcsv = csv;
     $(".cvsViewer").html(dispcsv);
     // csvをダウンロード
     let bom = new Uint8Array([0xEF, 0xBB, 0xBF])
@@ -251,6 +259,7 @@ $(function() {
     //
     socket.emit("refreshPod");
     // ログイン状況管理
+    $(".adLogin").empty();
     let teamlist = dispcsv.replace(/\r/g, "").split("\n");
     for (var i = 0; i < teamlist.length; i++) {
       let tname = teamlist[i].split(",")[0];
@@ -266,6 +275,11 @@ $(function() {
     for (var i = 0; i < status.length; i++) {
       $(`#ls${status[i]}`).addClass("alreadyl");
     }
+  });
+
+  // 最終結果表示
+  socket.on("failedLaunch", function() {
+    alert("ゲームの起動に失敗しました。最低でも1人のプレイヤーがログインしている必要があります。");
   });
 
   // 最終結果表示
