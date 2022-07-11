@@ -1,8 +1,8 @@
-@media only screen and (min-width: 720px) {
+@media only screen and (min-width: 1024px) {
   html {
-    font-size: 8px;
+    font-size: 12px;
   }
   .display {
-    max-width: 720px;
+    max-width: 1024px;
   }
 }
