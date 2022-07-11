@@ -72,40 +72,10 @@ $(function() {
     transMove($(".welcome"), $(".waitroom"), 0);
   });
 
-  // エラー表示
-  function showErrorPopup() {
-    $(".loginFailed").css("display", "block");
-    $(".loginFailed").removeClass("bgblurhide");
-    $(".loginFailed").addClass("bgblursnow");
-    $(".popup").css("display", "none");
-    setTimeout(function() {
-      $(".popup").css("display", "flex");
-      $(".popup").removeClass("popupscalehide");
-      $(".popup").addClass("popupscaleshow");
-    }, 200);
-    setTimeout(function() {
-      $(".loginFailed").addClass("bgblur");
-    }, 400);
-  }
-
   // ログイン失敗
   socket.on("loginFailed", function(team) {
-    // ログイン失敗ポップアップ
-    showErrorPopup();
-  });
-  // ポップアップ閉じる
-  $(".closepopup").on("click", function() {
-    $(".popup").removeClass("popupscaleshow");
-    $(".popup").addClass("popupscalehide");
-    $(".loginFailed").removeClass("bgblursnow");
-    $(".loginFailed").addClass("bgblurhide");
-    setTimeout(function() {
-      $(".popup").css("display", "none");
-    }, 200);
-    setTimeout(function() {
-      $(".loginFailed").css("display", "none");
-      $(".loginFailed").removeClass("bgblur");
-    }, 400);
+    // ログイン失敗アラート
+    alert(`＊ログインに失敗しました＊\n\n${team}は既に別のデバイスでログインされています。心当たりのない場合は企画委員にお声掛けください。\nε(๏_๏ )з`);
   });
 
   // ログアウトリクエスト
