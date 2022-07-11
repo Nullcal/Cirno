@@ -312,6 +312,7 @@ html, body, .wrapper, .display {
   display: none;
 }
 
+/* 問題文等 */
 .questInfo {
   padding: 4rem 0;
 }
@@ -330,6 +331,7 @@ html, body, .wrapper, .display {
   text-align: center;
 }
 
+/* 選択肢 */
 .tSubtitle {
   margin: 1rem 0;
   font-size: 2rem;
@@ -346,7 +348,7 @@ html, body, .wrapper, .display {
   display: none;
 }
 .optContainer .optionLabel {
-  display: block;
+  display: flex;
   width: 90%;
   height: 8rem;
   margin: .5rem;
@@ -364,22 +366,20 @@ html, body, .wrapper, .display {
 .optContainer input[type="radio"]:checked + .optionLabel {
   border: none;
   background: rgba(51, 158, 255, .4);
-  font-size: 3.5rem;
+  transform: scale(1.05);
   font-weight: 400;
   opacity: 1;
 }
 
 .optionLabel .tOptName {
-  position: absolute;
-  left: 24px;
-  width: calc(100% - 180px - 24px);
+  flex-grow: 2;
   text-align: center;
 }
 .optionLabel .tOptMag {
-  position: absolute;
-  left: calc(100% - 180px);
+  min-width: 16rem;
 }
 
+/* ベット量指定 */
 .voteview .tAmountForm {
   width: 100%;
   height: 30%;
@@ -494,16 +494,12 @@ html, body, .wrapper, .display {
 }
 
 .timeisup .bigtitle {
-	font-family: "Nicomoji", sans-serif;
-  font-size: 200px;
-  font-weight: 400;
-  color: white;
+  font-size: 12rem;
 }
 
 .timeisup .subtitle {
-	margin-top: 36px;
-  font-size: 36px;
-  color: white;
+	margin-top: 2rem;
+  font-size: 2rem;
 }
 
 
