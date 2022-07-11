@@ -289,27 +289,30 @@ html, body, .wrapper, .display {
 
 
 
+/* 開始画面 */
+
+
+
 .startview {
   display: none;
 }
 
 .startview .bigtitle {
-  font-size: 320px;
+  font-size: 20rem;
   font-weight: 400;
-  color: white;
 }
 
+
+
+/* ベット画面 */
 
 
 
 .voteview {
   display: none;
-  position: absolute;
 }
 
 .tVote {
-  position: absolute;
-  top: 0;
   width: 100%;
   height: calc(100% - 20% - 48px);
   display: flex;
