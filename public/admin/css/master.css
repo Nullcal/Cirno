@@ -1,0 +1,542 @@
+@font-face {
+	font-family: "Nicomoji";
+	src: url(../../css/font/nicomoji.ttf);
+}
+
+* {
+  font-family: sans-serif;
+  color: rgba(0,0,0,.8);
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: white;
+}
+
+.copyright {
+  position: fixed;
+  bottom: 64px;
+  z-index: 334;
+  padding: 8px;
+  background: white;
+  border-radius: 8px;
+}
+.copyright, .copyright a {
+  font-size: 24px;
+  opacity: .8;
+}
+
+.vertflex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: .4s ease-in-out;
+}
+
+/* ログイン画面 */
+
+.loginPanel {
+  background: white;
+  z-index: 20;
+}
+
+.logo {
+  position: relative;
+  width: 70%;
+  max-width: 640px;
+  margin-bottom: 8%;
+}
+.logo span {
+  display: block;
+  position: absolute;
+  white-space: nowrap;
+  left: calc(100% - 22%);
+  bottom: 1%;
+  font-family: "Nicomoji", sans-serif;
+  font-size: 36px;
+}
+
+.loginBox {
+  width: 80%;
+  max-width: 720px;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.login {
+  position: relative;
+}
+.login * {
+  width: 90%;
+  height: 96px;
+  margin-bottom: 60px;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.login input {
+  position: relative;
+  padding: 16px;
+  border: 1px solid #e6e6e6;
+  background: white;
+  font-size: 36px;
+  transition: .2s;
+}
+.login input.error {
+  border: 4px solid red;
+}
+
+.login span {
+  opacity: 0;
+  position: absolute;
+  top: -48px;
+  height: 48px;
+  margin: 0;
+  font-size: 24px;
+  color: red;
+  transition: .2s;
+}
+.login span.error {
+  opacity: 1;
+}
+
+.login button {
+  background: #90daff;
+  color: white;
+  font-size: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: .2s;
+}
+.login button:active {
+  opacity: .8;
+}
+
+/* 設定 */
+
+.settingPanel {
+  background: white;
+  z-index: 10;
+  overflow-y: scroll;
+  justify-content: flex-start;
+}
+
+.settingPanel .title {
+  font-size: 64px;
+  font-family: "Nicomoji", sans-serif;
+  line-height: 160px;
+}
+
+.settingPanel .mainButton {
+  width: 90%;
+  height: 96px;
+  margin-bottom: 24px;
+  line-height: 96px;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  background: #90daff;
+  color: white;
+  font-size: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: .2s;
+}
+#forceTerminate {
+	background: #FFCEF3;
+}
+.settingPanel button:active {
+  opacity: .8;
+}
+.settingPanel .mainButton:disabled, #forceTerminate:disabled {
+  background: #e6e6e6;
+}
+
+.ctrlPanel {
+  background: #efefef;
+  width: 90%;
+  padding: 8px;
+  padding-bottom: 16px;
+  margin: 24px 0;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+.ctrlPanel hr {
+  width: 90%;
+}
+.ctrlTitle {
+  font-size: 36px;
+  line-height: 96px;
+}
+
+.qoBox, .obBox {
+  width: 100%;
+}
+
+.qBox {
+  background: white;
+  width: 90%;
+  padding: 8px;
+  margin: 12px 0;
+  border-radius: 16px;
+  box-sizing: border-box;
+	transition: .2s;
+	outline: 8px solid rgba(144, 218, 255, 0);
+}
+.qBox.using {
+	outline: 8px solid #90daff;
+}
+
+.qBox .qtBox {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.qBox .qTitle {
+  width: calc(100% - 36px);
+  padding: 16px 8px;
+  margin-left: 18px;
+  font-size: 42px;
+  font-family: "Nicomoji", sans-serif;
+  line-height: 72px;
+  outline: none;
+  border: none;
+}
+
+.qBox .delQuest {
+  position: relative;
+  width: 240px;
+  height: 60px;
+  border-radius: 36px;
+  margin-right: 18px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 48px;
+  text-align: center;
+  line-height: 24px;
+  background: #efefef;
+  transform: translateY(-4px);
+}
+.qBox .delQuest>* {
+  position: absolute;
+  top: calc(50% - 16px);
+}
+
+.oBox, .addOpt {
+  position: relative;
+  width: calc(100% - 36px);
+  padding: 8px;
+  margin-bottom: 16px;
+  background: #efefef;
+  border-radius: 16px;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  flex-direction: row;
+  transition: .2s;
+}
+.oBox *:focus {
+  font-weight: 600;
+}
+.oBox.answer {
+  background: #CABBE9;
+}
+.oBox.answer *, .oBox.answer {
+  transition: .2s;
+}
+.oBox.answer input, .oBox.answer span {
+  font-weight: 600;
+}
+.oBox.answer .qOption {
+  color: white;
+}
+.oBox .qOption {
+  width: calc(100% - 96px);
+  padding: 16px 8px;
+  font-size: 36px;
+  outline: none;
+  border: none;
+  background: none;
+  box-sizing: border-box;
+}
+.oBox .setAns+span {
+  position: absolute;
+  right: 116px;
+  font-size: 36px;
+}
+.oBox .delOpt {
+  width: 74px;
+  height: 74px;
+  margin-right: 8px;
+  padding: 16px 8px;
+  outline: none;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 48px;
+  text-align: center;
+  line-height: 24px;
+  background: #FFCEF3;
+}
+.oBox .delOpt:disabled {
+  cursor: default;
+  background: #e6e6e6;
+}
+.oBox .delOpt>* {
+  position: absolute;
+  top: calc(50% - 16px);
+  color: white;
+}
+
+.oBox .setAns {
+  width: 20%;
+  height: 74px;
+  margin: 0 8px;
+  padding: 16px 8px;
+  outline: none;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.5);
+}
+.oBox .qMagnif {
+  width: 96px;
+  padding: 16px 8px;
+  padding-left: 36px;
+  font-size: 36px;
+  outline: none;
+  border-radius: 8px;
+  border: none;
+  background: white;
+}
+
+.qBox .addOpt, .qBox .useQuest {
+  justify-content: center;
+  width: calc(100% - 36px);
+  height: 90px;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  background: rgba(0,0,0,.8);
+  font-size: 32px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  transition: .2s;
+}
+.qBox .useQuest {
+	margin-bottom: 8px;
+  background: #90daff;
+}
+
+.ctrlPanel .addQuest {
+  justify-content: center;
+  width: 90%;
+  height: 90px;
+  margin: 12px 0;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  background: rgba(0,0,0,.8);
+  font-size: 32px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  transition: .2s;
+}
+
+.scButton {
+  justify-content: center;
+  width: 90%;
+  height: 90px;
+  margin: 12px 0;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  background: #90daff;
+  font-size: 32px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  transition: .2s;
+}
+
+
+
+.readmer {
+	width: 90%;
+	height: 480px;
+	overflow-y: scroll;
+}
+.information p {
+	font-size: 32px;
+	text-align: center;
+}
+
+
+
+.timerControl .qTimerBox {
+  position: relative;
+  width: 100%;
+}
+.timerControl input[type=number] {
+  width: 90%;
+  margin: 12px 0;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+  font-size: 240px;
+  text-align: center;
+}
+.timerControl .timerUnit {
+  display: block;
+  position: absolute;
+  right: calc(24px + 5%);
+  bottom: 24px;
+  font-size: 48px;
+}
+
+.slBox {
+	width: 90%;
+}
+.tBox {
+	width: 100%;
+	padding: 8px 16px;
+  margin: 8px;
+	border-radius: 16px;
+	background: white;
+}
+.slTeamname, .adpPlace {
+	width: 100%;
+	padding-left: 36px;
+	font-size: 36px;
+	font-family: "Nicomoji", sans-serif;
+	text-align: left;
+	opacity: .6;
+}
+.slScoreBox, .adPodiCont {
+	width: 100%;
+	flex-direction: row;
+}
+.slScoreBox .slArrow {
+	width: 20%;
+}
+.slScoreBox .slTriangle {
+	background-color: #90daff;
+	width: 32px;
+	height: 40px;
+	clip-path: polygon(0 0, 0% 100%, 100% 50%);
+}
+.slScoreBox span {
+	width: 40%;
+	font-size: 72px;
+}
+.slScoreBox input {
+	width: 40%;
+	font-size: 72px;
+	padding: 0 8px;
+	border-radius: 16px;
+	border: none;
+	outline: none;
+	transition: .2s;
+}
+.slScoreBox input:hover {
+	background: #efefef;
+}
+
+
+
+.adLogin {
+	width: 90%;
+	align-content: flex-start;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.loginname {
+	display: block;
+	width: 30%;
+	height: 90px;
+	margin: 8px 1.5%;
+	border-radius: 16px;
+	background: white;
+	text-align: center;
+	line-height: 90px;
+	font-size: 48px;
+	transition: .2s;
+}
+.loginname.alreadyl {
+	background: #CABBE9;
+	color: white;
+	font-weight: 500;
+}
+
+
+
+.adPodi {
+	width: 90%;
+}
+.adPodiums {
+	width: 100%;
+	padding: 8px 16px;
+  margin: 8px;
+	border-radius: 16px;
+	background: white;
+}
+.adPodiCont span {
+	width: 50%;
+	font-size: 72px;
+}
+.adpName {
+	padding-left: 36px;
+}
+
+
+
+.ctBox {
+	width: 90%;
+	padding: 8px 16px;
+  margin: 8px;
+	border-radius: 16px;
+	background: white;
+}
+.ctBox .cvsViewer {
+	resize: none;
+	margin: 12px 0;
+	width: calc(100% - 36px);
+	border: none;
+	outline: none;
+	font-size: 48px;
+	font-family: "Inconsolata", monospace;
+}
+#importCsv {
+	display: none;
+}
+.importCsvLab {
+	line-height: 92px;
+}
+#downloadCsv {
+	line-height: 92px;
+	text-decoration: none;
+}
