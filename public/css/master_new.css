@@ -160,15 +160,10 @@ html, body, .wrapper, .display {
 
 
 
-/* ログイン失敗画面 */
-
-
-
-
-
-
 
 /* トランジション */
+
+
 
 .transitionPanels {
   display: none;
@@ -187,15 +182,11 @@ html, body, .wrapper, .display {
   height: 100%;
   background: white;
 }
+
 .movefrom {
   animation-name: movefrom;
   animation-duration: .4s;
   right: 0;
-}
-.backfrom {
-  animation-name: backfrom;
-  animation-duration: .4s;
-  left: 0;
 }
 @keyframes movefrom {
   0% {
@@ -205,6 +196,12 @@ html, body, .wrapper, .display {
 		width: 100%;
 	}
 }
+
+.backfrom {
+  animation-name: backfrom;
+  animation-duration: .4s;
+  left: 0;
+}
 @keyframes backfrom {
   0% {
 		width: 0;
@@ -213,15 +210,11 @@ html, body, .wrapper, .display {
 		width: 100%;
 	}
 }
+
 .moveto {
   animation-name: moveto;
   animation-duration: .4s;
   left: 0;
-}
-.backto {
-  animation-name: backto;
-  animation-duration: .4s;
-  right: 0;
 }
 @keyframes moveto {
   0% {
@@ -230,6 +223,12 @@ html, body, .wrapper, .display {
 	100% {
     width: 0;
 	}
+}
+
+.backto {
+  animation-name: backto;
+  animation-duration: .4s;
+  right: 0;
 }
 @keyframes backto {
   0% {
@@ -241,7 +240,9 @@ html, body, .wrapper, .display {
 }
 
 
+
 /* 待機画面 */
+
 
 
 .waitroom {
@@ -249,9 +250,6 @@ html, body, .wrapper, .display {
 }
 
 .logoContainer {
-  position: absolute;
-  left: 0;
-  top: 0;
   width: 100%;
   height: calc(30% - 24px);
   display: flex;
