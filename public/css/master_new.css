@@ -1,0 +1,1088 @@
+@font-face {
+	font-family: "Nicomoji";
+	src: url(font/nicomoji.ttf);
+}
+
+/* 変数　*/
+:root {
+  --color: #FFAA00;
+  --subcolor: #330000;
+}
+
+* {
+  font-family: "Poppins", 'M PLUS 1', sans-serif;
+  font-weight: 300;
+}
+
+html, body, .wrapper, .display {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+/* 背景
+.wrapper {
+  background-image: linear-gradient(60deg, #ff6b00, #ffb800);
+}
+*/
+.wrapper {
+	background-color: #ffffff;
+	background-size: 200%;
+  background-image: repeating-linear-gradient(-45deg, #ffb200, #ffb200 36px,transparent 0, transparent 72px);
+	animation-name: bgani;
+	animation-duration: 1.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@keyframes bgani{
+  0%{
+    background-position: 0px;
+  }
+  100%{
+		background-position: -100px;
+  }
+}
+
+.display {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: var(--subcolor);
+}
+
+button {
+	font-weight: 500;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+
+/* Welcome */
+
+
+.logoSvg {
+  width: 70%;
+  max-width: 640px;
+  fill: black;
+}
+
+.welcome .logoSvg {
+  position: absolute;
+  top: 15%;
+}
+
+.loginForm {
+  position: absolute;
+  top: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loginForm .info {
+  font-size: 36px;
+  color: white;
+  opacity: .8;
+}
+
+.loginForm a, .infoo {
+  margin-top: 16px;
+  font-size: 28px;
+  color: white;
+}
+
+.loginForm select {
+	appearance: none;
+  width: 420px;
+  height: 320px;
+  outline: none;
+  border: none;
+  border-radius: 48px;
+  background: none;
+  font-size: 240px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: .2s;
+}
+.loginForm select:hover {
+  background: rgba(255, 255, 255, .1);
+}
+
+.loginForm button {
+  width: 420px;
+  height: 96px;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  border: none;
+  border-radius: 48px;
+  background: rgba(255, 255, 255, .2);
+  text-align: center;
+  font-size: 48px;
+  color: white;
+  cursor: pointer;
+  transition: .2s;
+  white-space: nowrap;
+}
+.loginForm button:active {
+  background: rgba(255, 255, 255, .5);
+}
+
+.copyright {
+  position: fixed;
+  bottom: 64px;
+}
+.copyright, .copyright a {
+  font-size: 24px;
+  color: white;
+  opacity: .8;
+}
+
+/* ログイン失敗画面 */
+.loginFailed {
+  backdrop-filter: blur(16px)opacity(0);
+  -webkit-backdrop-filter: blur(16px)opacity(0);
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bgblur {
+  backdrop-filter: blur(16px)opacity(1);
+  -webkit-backdrop-filter: blur(16px)opacity(1);
+}
+
+.bgblursnow {
+  animation-name: popupblurshow;
+  animation-duration: .4s;
+}
+.bgblurhide {
+  animation-name: popupblurhide;
+  animation-duration: .4s;
+}
+@keyframes popupblurshow {
+  0% {
+    background: rgba(255, 0, 0, 0);
+    backdrop-filter: blur(16px)opacity(0);
+    -webkit-backdrop-filter: blur(16px)opacity(0);
+  }
+  100% {
+    background: rgba(0, 255, 0, 0);
+    backdrop-filter: blur(16px)opacity(1);
+    -webkit-backdrop-filter: blur(16px)opacity(1);
+  }
+}
+@keyframes popupblurhide {
+  0% {
+    background: rgba(0, 255, 0, 0);
+    backdrop-filter: blur(16px)opacity(1);
+    -webkit-backdrop-filter: blur(16px)opacity(1);
+  }
+  100% {
+    background: rgba(255, 0, 0, 0);
+    backdrop-filter: blur(16px)opacity(0);
+    -webkit-backdrop-filter: blur(16px)opacity(0);
+  }
+}
+
+.popup {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%)translateY(-50%);
+  width: 80%;
+  max-width: 960px;
+  height: 460px;
+  z-index: 2;
+  background: rgba(255, 255, 255, .6);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  border: 2px solid var(--subcolor);
+  border-radius: 96px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.popup .title {
+  font-size: 54px;
+  margin-bottom: 16px;
+}
+.popup .info {
+  font-size: 24px;
+  text-align: center;
+}
+.popup button {
+  width: 420px;
+  height: 96px;
+  margin-top: 64px;
+  border: none;
+  border-radius: 48px;
+  background: var(--subcolor);
+  text-align: center;
+  font-size: 48px;
+  color: white;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.popupscaleshow {
+  animation-name: popupscaleshow;
+  animation-duration: .2s;
+}
+.popupscalehide {
+  animation-name: popupscalehide;
+  animation-duration: .2s;
+}
+@keyframes popupscaleshow {
+  0% {
+    transform: translateX(-50%)translateY(-50%)scale(90%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50%)translateY(-50%)scale(100%);
+    opacity: 1;
+  }
+}
+@keyframes popupscalehide {
+  0% {
+    transform: translateX(-50%)translateY(-50%)scale(100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%)translateY(-50%)scale(90%);
+    opacity: 0;
+  }
+}
+
+/* トランジション */
+
+.transitionPanels {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 334
+}
+.transitionPanel {
+  display: block;
+  position: fixed;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: white;
+}
+.movefrom {
+  animation-name: movefrom;
+  animation-duration: .4s;
+  right: 0;
+}
+.backfrom {
+  animation-name: backfrom;
+  animation-duration: .4s;
+  left: 0;
+}
+@keyframes movefrom {
+  0% {
+		width: 0;
+	}
+	100% {
+		width: 100%;
+	}
+}
+@keyframes backfrom {
+  0% {
+		width: 0;
+	}
+	100% {
+		width: 100%;
+	}
+}
+.moveto {
+  animation-name: moveto;
+  animation-duration: .4s;
+  left: 0;
+}
+.backto {
+  animation-name: backto;
+  animation-duration: .4s;
+  right: 0;
+}
+@keyframes moveto {
+  0% {
+		width: 100%;
+	}
+	100% {
+    width: 0;
+	}
+}
+@keyframes backto {
+  0% {
+		width: 100%;
+	}
+	100% {
+    width: 0;
+	}
+}
+
+
+/* 待機画面 */
+
+
+.waitroom {
+  display: none;
+}
+
+.logoContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: calc(30% - 24px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logoContainer .logoSvg {
+  position: inherit;
+  margin: 0;
+}
+
+.whitebg {
+  position: absolute;
+  bottom: 24px;
+  width: calc(100% - 48px);
+  height: 70%;
+  border-radius: 64px;
+	background: white;
+	box-shadow: 2px 2px 8px rgba(0,0,0,.4), -2px -2px 8px rgba(255,255,255,.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.waitroom .copyright, .waitroom .copyright a {
+  color: var(--subcolor);
+}
+
+.whitebg .sinfo {
+  font-size: 36px;
+  color: var(--subcolor);
+}
+
+.whitebg .wscore {
+  font-size: 180px;
+  color: var(--subcolor);
+}
+
+.whitebg .plzwait {
+  font-size: 36px;
+  color: var(--subcolor);
+  margin-bottom: 16px;
+  margin-top: 3%;
+}
+.whitebg .plzwaitntc {
+  font-size: 28px;
+  margin-bottom: 10%;
+  color: var(--subcolor);
+}
+
+.whitebg button {
+  width: 420px;
+  height: 96px;
+  border: 1px solid var(--subcolor);
+  border-radius: 48px;
+  background: none;
+  text-align: center;
+  font-size: 48px;
+  color: var(--subcolor);
+  cursor: pointer;
+  transition: .2s;
+  margin-bottom: 1%;
+}
+
+
+
+.startview {
+  display: none;
+}
+
+.startview .bigtitle {
+  font-size: 320px;
+  font-weight: 400;
+  color: white;
+}
+
+
+
+
+.voteview {
+  display: none;
+  position: absolute;
+}
+
+.tVote {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: calc(100% - 20% - 48px);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.voteview .questInfo {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.voteview .tQnum {
+  font-size: 48px;
+}
+.voteview .tQuest {
+  font-size: 72px;
+	font-family: "Nicomoji", sans-serif;
+  text-align: center;
+}
+
+.voteview .tSubtitle {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  transform: translateX(calc(-50vw + 50% + 36px));
+  font-size: 36px;
+	color: white;
+}
+.voteview .tSmallInfo {
+  font-size: 24px;
+}
+
+.voteview .tRadioForm {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.voteview .optContainer {
+  overflow-y: scroll;
+}
+.voteview input[type=radio] {
+  display: none;
+}
+.voteview input[type="radio"]:checked + .optionLabel {
+  border: none;
+  background: rgba(255, 255, 255, .2);
+  font-size: 54px;
+  font-weight: 400;
+  color: white;
+  opacity: 1;
+}
+.voteview .optionLabel {
+  position: relative;
+  display: block;
+  width: calc(100vw - 48px);
+  height: 120px;
+  margin: 8px;
+  border-radius: 60px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  background: none;
+  text-align: center;
+  line-height: 120px;
+  font-size: 48px;
+  font-weight: 200;
+  color: white;
+  opacity: .6;
+  transition: .2s;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.optionLabel .tOptName {
+  position: absolute;
+  left: 24px;
+  width: calc(100% - 180px - 24px);
+  text-align: center;
+}
+.optionLabel .tOptMag {
+  position: absolute;
+  left: calc(100% - 180px);
+}
+
+.voteview .tAmountForm {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.tAmountForm input[type=number] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.tAmountForm input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  width: calc(100% - 96px);
+  height: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+}
+.tAmountForm input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15);
+}
+.tAmountForm .tBetVal {
+  color: white;
+  font-size: 120px;
+}
+
+.voteview .infopanelbtm {
+  position: absolute;
+  bottom: 24px;
+  width: calc(100% - 48px);
+  height: 20%;
+  border-radius: 64px;
+	background: white;
+	box-shadow: 2px 2px 8px rgba(0,0,0,.4), -2px -2px 8px rgba(255,255,255,.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.infopanelbtm .score {
+  width: 60%;
+  height: 100%;
+  padding-left: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.infopanelbtm .tScoreInfo {
+  display: block;
+  font-size: 36px;
+  margin-bottom: 16px;
+  color: var(--subcolor);
+}
+.infopanelbtm .tScoreVal {
+  margin-left: 48px;
+  margin-bottom: 36px;
+  font-size: 128px;
+  line-height: 96px;
+}
+.infopanelbtm .timer {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--subcolor);
+}
+.infopanelbtm .timerFrame {
+  transform: translateY(12px);
+  width: 240px;
+  height: 240px;
+  border-radius: 120px;
+  border: 8px solid var(--subcolor);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.infopanelbtm .timerFrame::before {
+  position: absolute;
+  top: calc(50% - 120px - 24px + 2px);
+  content: "";
+  width: 48px;
+  height: 24px;
+  border-radius: 12px;
+  background: var(--subcolor);
+}
+.infopanelbtm .tTimerInfo {
+  display: block;
+  font-size: 24px;
+}
+.infopanelbtm .tTimerVal {
+  display: block;
+  font-size: 72px;
+  margin-bottom: 24px;
+}
+
+
+
+.timeisup {
+  display: none;
+}
+
+.timeisup .bigtitle {
+	font-family: "Nicomoji", sans-serif;
+  font-size: 200px;
+  font-weight: 400;
+  color: white;
+}
+
+.timeisup .subtitle {
+	margin-top: 36px;
+  font-size: 36px;
+  color: white;
+}
+
+
+
+.resultview {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.tResult {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.resultview .questInfo {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.resultview .tQnum {
+  font-size: 48px;
+}
+.resultview .tQuest {
+  font-size: 72px;
+	font-family: "Nicomoji", sans-serif;
+  text-align: center;
+}
+
+.resultview .taPanel {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.resultview .tCalc {
+	margin-top: 24px;
+	height: calc(60% - 369px - 72px);
+	overflow-y: scroll;
+}
+.resultview .tSubtitle {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  transform: translateX(calc(-50vw + 50% + 36px));
+  font-size: 48px;
+	color: white;
+}
+.resultview .answerBox {
+	width: calc(100% - 96px);
+	padding: 16px;
+	border-radius: 48px;
+	background: white;
+	box-shadow: 2px 2px 8px rgba(0,0,0,.4), -2px -2px 8px rgba(255,255,255,.4);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.answerBox * {
+	width: 100%;
+}
+.answerBox .taCateam {
+	font-size: 36px;
+	text-align: right;
+}
+.answerBox .taTitle {
+	font-size: 72px;
+	font-weight: 500;
+	text-align: center;
+}
+.answerBox .taMagnif {
+	font-size: 36px;
+	text-align: center;
+}
+
+.resultview .correct {
+	width: calc(100% - 64px);
+	color: rgba(255,255,255,.6);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.resultview .tasBox {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.resultview .tasAmount {
+	width: 55%;
+}
+.resultview .tasMagnif {
+	width: 25%;
+}
+.resultview .tasOpera {
+	align-items: center;
+  justify-content: flex-end;
+	width: 10%;
+}
+
+.tasBox .tasBoxInfo {
+	font-size: 28px;
+}
+.tasBox .tasBoxValue {
+	width: 100%;
+	height: 120px;
+	text-align: center;
+	border-radius: 16px;
+	border: 2px solid rgba(255,255,255,.6);
+	font-size: 96px;
+	line-height: 120px;
+}
+.tasBox .tasBoxOpera {
+	height: 124px;
+	margin-top: 38px;
+	text-align: center;
+	font-size: 96px;
+	font-weight: 100;
+}
+.resultview .taRank {
+  margin-top: 24px;
+  margin-bottom: 12px;
+	text-align: right;
+	width: calc(100% - 64px);
+  font-size: 48px;
+	color: white;
+}
+.resultview .tqInfo {
+  font-size: 36px;
+	color: white;
+	text-align: center;
+}
+
+.getScore {
+	width: calc(100% - 64px);
+	color: white;
+  display: flex;
+  justify-content: center;
+	align-items: center;
+  flex-direction: column;
+}
+.getScore .tasBoxInfo {
+	font-size: 36px;
+}
+.getScore .tasBoxValue {
+	width: 100%;
+	height: 168px;
+	text-align: center;
+	border-radius: 32px;
+	border: 2px solid rgba(255,255,255,.6);
+	font-size: 144px;
+	line-height: 172px;
+	color: white;
+}
+.resultview .tainfopanelbtm {
+  position: absolute;
+  bottom: 24px;
+  width: calc(100% - 48px);
+  height: 20%;
+  border-radius: 64px;
+	background: white;
+	box-shadow: 2px 2px 8px rgba(0,0,0,.4), -2px -2px 8px rgba(255,255,255,.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tainfopanelbtm .tascore {
+  width: 60%;
+  height: 100%;
+  padding-left: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.tainfopanelbtm .tatScoreInfo {
+	width: 100%;
+	text-align: left;
+  display: block;
+  font-size: 36px;
+  margin-bottom: 16px;
+  color: var(--subcolor);
+}
+.tainfopanelbtm .tatScoreVal {
+	width: 100%;
+	text-align: center;
+  margin-bottom: 36px;
+  font-size: 128px;
+  line-height: 96px;
+}
+
+.tasBalloon {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.taBalloon {
+	position: relative;
+  display: inline-block;
+  padding: 0 5px;
+  width: 156px;
+  height: 156px;
+  line-height: 156px;
+  text-align: center;
+  color: #FFF;
+  font-size: 32px;
+  font-weight: bold;
+  background: var(--subcolor);
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.taBalloon:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -40px;
+  margin-top: -25px;
+  border: 25px solid transparent;
+  border-right: 25px solid var(--subcolor);
+  z-index: 0;
+}
+
+
+
+.finalview {
+	font-family: sans-serif;
+  display: none;
+	justify-content: flex-start;
+}
+.finalview .fPodiumBox {
+	width: 100%;
+	height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.finalview .fTitle {
+	font-size: 96px;
+	font-weight: 500;
+	font-family: "Nicomoji", sans-serif;
+	color: white;
+}
+.finalview .fSubTitle {
+	font-size: 36px;
+	color: white;
+}
+.finalview .fPodiumTitle {
+	height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	flex-direction: column;
+}
+.finalview .fPodium {
+	width: 100%;
+	height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.fPodium .fpSingle {
+	position: relative;
+	width: 33%;
+	background: rgba(255, 255, 255, .3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.fPodium .fpSt {
+	width: 34%;
+	height: 70%;
+	box-shadow: 0 32px 32px rgba(0,0,0,0.3);
+}
+.fPodium .fpNd {
+	height: 55%;
+}
+.fPodium .fpRd {
+	height: 40%;
+}
+
+.fpSt .fpTeamname {
+	top: -204px;
+	font-size: 168px;
+}
+.fpNd .fpTeamname, .fpRd .fpTeamname {
+	top: -160px;
+	font-size: 128px;
+}
+.fpSingle .fpTeamname {
+	position: absolute;
+	color: white;
+}
+
+.fpSingle .fpScore {
+	margin-top: 16px;
+	font-size: 54px;
+}
+
+.fpSt .fpPlace {
+	background-image: linear-gradient(-15deg, #ffd261 50%, #ffe6a6 50%);
+	box-shadow: 0 8px 24px rgb(255, 238, 194);
+}
+.fpNd .fpPlace {
+	background-image: linear-gradient(-15deg, #c7c7c7 50%, #e4e0e0 50%);
+	box-shadow: 0 8px 24px rgb(228, 224, 224);
+}
+.fpRd .fpPlace {
+	background-image: linear-gradient(-15deg, #ffa97e 50%, #ffc5a8 50%);
+	box-shadow: 0 8px 24px rgb(255, 213, 191);
+}
+.fpSingle .fpPlace {
+	margin-top: 16px;
+	font-size: 48px;
+	line-height: 60px;
+	width: 144px;
+	text-align: center;
+	border-radius: 36px;
+}
+
+.finalview .fFinalScore {
+	position: relative;
+	width: 100%;
+	height: 25%;
+	background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+	overflow-y: scroll;
+}
+.fFinalScore .tRank {
+	font-size: 48px;
+}
+.fFinalScore .tRankBig {
+	margin: 0 16px;
+	font-size: 96px;
+	line-height: 96px;
+}
+.fFinalScore .tScoreInfo {
+	font-size: 36px;
+}
+.fFinalScore .tScore {
+	font-size: 144px;
+	font-weight: 400;
+	line-height: 128px;
+	padding: 16px 10%;
+	border-radius: 32px;
+	border: 2px solid var(--subcolor);
+}
+
+.finalview .fTotalScore {
+	width: 100%;
+	height: 25%;
+	background: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+	color: white;
+}
+.fTotalScore .fsbBox {
+	width: 50%;
+	height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.fTotalScore .fScoreBox {
+	width: 100%;
+	height: 48%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.fScoreBox>* {
+	width: 100%;
+}
+.fScoreBox .fScoreInfo {
+	font-size: 36px;
+	padding-left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.fScoreBox .fScore {
+	width: 90%;
+	text-align: center;
+	font-size: 96px;
+	line-height: 96px;
+	padding: 8px 0;
+	border-radius: 32px;
+	border: 2px solid white;
+}
+.ttScore {
+	font-weight: 500;
+}
+
+.fTotalScore .tyfp {
+	width: 50%;
+	height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.tyLogo {
+	width: 80%;
+	max-height: 50%;
+}
+.tySpan {
+	margin-top: 24px;
+	font-size: 32px;
+}
