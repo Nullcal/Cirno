@@ -3,15 +3,25 @@
 	src: url(font/nicomoji.ttf);
 }
 
+
+
 /* 変数　*/
+
+
+
 :root {
   --fcol: #222222;
   --color: #FFAA00;
   --subcolor: #330000;
 }
 
+
+
 /* アニメーション */
-@keyframes bgani{
+
+
+
+@keyframes bgani {
   0%{
     background-position: 0px;
   }
@@ -20,7 +30,12 @@
   }
 }
 
+
+
 /* ルート */
+
+
+
 * {
   font-family: "Poppins", 'M PLUS 1', sans-serif;
   font-weight: 300;
@@ -53,38 +68,42 @@ html, body, .wrapper, .display {
   color: var(--subcolor);
 }
 
+
+
 /* flex */
-.flex-centcol {
+
+
+
+.cFlex {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+
 
 
 /* Welcome */
 
-.logo {
-  width: 100%;
-  min-height: 220px;
-}
-.logo img {
-  width: 70%;
-  max-width: 640px;
-}
 
-.welcome .logoSvg {
-  position: absolute;
-  top: 15%;
-}
 
-.loginForm {
-  position: absolute;
-  top: 40%;
+.welcome > div {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.logo {
+  width: 100%;
+  min-height: 16rem;
+}
+.logo img {
+  width: 70%;
+  max-width: 40rem;
+}
+
+.loginForm {
 }
 
 .loginForm .info {
