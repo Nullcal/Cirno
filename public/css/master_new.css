@@ -50,10 +50,6 @@ html, body, .wrapper, .display {
   position: absolute;
   left: 0;
   top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   color: var(--subcolor);
 }
 
@@ -61,6 +57,14 @@ button {
 	font-weight: 500;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+}
+
+/* flex */
+.flex-centcol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 
