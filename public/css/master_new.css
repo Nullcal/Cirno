@@ -106,32 +106,29 @@ html, body, .wrapper, .display {
 .login {
   flex-shrink: 0;
 }
+
 .login .info {
-  margin-top: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   font-size: 2rem;
   opacity: .8;
 }
-
-.login a {
+.login .infoo {
   margin-top: 1rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .login select {
 	appearance: none;
-  width: 420px;
-  height: 320px;
-  outline: none;
+  width: 30rem;
+  height: 20rem;
+  background: rgba(0, 0, 0, .02);
+  border-radius: 3rem;
   border: none;
-  border-radius: 48px;
-  background: none;
-  font-size: 240px;
+  outline: none;
+  font-size: 12rem;
   text-align: center;
   cursor: pointer;
-  transition: .2s;
-}
-.login select:hover {
-  background: rgba(255, 255, 255, .1);
 }
 
 .login button {
