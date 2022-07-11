@@ -183,9 +183,7 @@ html, body, .wrapper, .display {
   opacity: .6;
 }
 
-
-
-.login button {
+.blue-button {
   width: 30rem;
   height: 6rem;
   margin-top: 3rem;
@@ -200,7 +198,7 @@ html, body, .wrapper, .display {
   transition: .2s;
   white-space: nowrap;
 }
-.login button:active {
+.blue-button:active {
   background: rgba(51, 158, 255, .2);
 }
 
@@ -267,40 +265,26 @@ html, body, .wrapper, .display {
 
 .whitebg {
   width: 90%;
-  border-radius: 64px;
+  border-radius: 4rem;
 	background: rgba(0, 0, 0, .05);
+  padding-top: 6rem;
+  padding-bottom: 2rem;
 }
 
 .whitebg .sinfo {
-  font-size: 36px;
+  font-size: 3rem;
 }
-
 .whitebg .wscore {
-  font-size: 180px;
+  font-size: 12rem;
 }
-
 .whitebg .plzwait {
-  font-size: 36px;
-  margin-bottom: 16px;
-  margin-top: 3%;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .whitebg .plzwaitntc {
-  font-size: 28px;
-  margin-bottom: 10%;
-}
-
-.whitebg button {
-  width: 420px;
-  height: 96px;
-  border: 1px solid var(--subcolor);
-  border-radius: 48px;
-  background: none;
-  text-align: center;
-  font-size: 48px;
-  color: var(--subcolor);
-  cursor: pointer;
-  transition: .2s;
-  margin-bottom: 1%;
+  font-size: 2rem;
+  margin-bottom: 4rem;
 }
 
 
