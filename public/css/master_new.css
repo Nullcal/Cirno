@@ -5,13 +5,26 @@
 
 /* 変数　*/
 :root {
+  --fcol: #222222;
   --color: #FFAA00;
   --subcolor: #330000;
 }
 
+/* アニメーション */
+@keyframes bgani{
+  0%{
+    background-position: 0px;
+  }
+  100%{
+		background-position: -100px;
+  }
+}
+
+/* ルート */
 * {
   font-family: "Poppins", 'M PLUS 1', sans-serif;
   font-weight: 300;
+  color: var(--fcol);
 }
 
 html, body, .wrapper, .display {
@@ -23,28 +36,14 @@ html, body, .wrapper, .display {
   font-size: 16px;
 }
 
-/* 背景
-.wrapper {
-  background-image: linear-gradient(60deg, #ff6b00, #ffb800);
-}
-*/
 .wrapper {
 	background-color: #ffffff;
 	background-size: 200%;
-  background-image: repeating-linear-gradient(-45deg, #ffb200, #ffb200 36px,transparent 0, transparent 72px);
+  background-image: repeating-linear-gradient(-45deg, #fafafa, #fafafa 36px,transparent 0, transparent 72px);
 	animation-name: bgani;
 	animation-duration: 1.5s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
-}
-
-@keyframes bgani{
-  0%{
-    background-position: 0px;
-  }
-  100%{
-		background-position: -100px;
-  }
 }
 
 .display {
@@ -90,14 +89,12 @@ button {
 
 .loginForm .info {
   font-size: 36px;
-  color: white;
   opacity: .8;
 }
 
 .loginForm a, .infoo {
   margin-top: 16px;
   font-size: 28px;
-  color: white;
 }
 
 .loginForm select {
