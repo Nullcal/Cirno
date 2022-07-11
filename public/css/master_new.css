@@ -59,12 +59,12 @@ html, body, .wrapper, .display {
 	animation-duration: 1.5s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .display {
-  position: absolute;
-  left: 0;
-  top: 0;
   color: var(--subcolor);
 }
 
@@ -92,10 +92,10 @@ html, body, .wrapper, .display {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 
 .logo {
-  width: 100%;
   min-height: 16rem;
 }
 .logo img {
@@ -103,20 +103,20 @@ html, body, .wrapper, .display {
   max-width: 40rem;
 }
 
-.loginForm {
+.login {
+  flex-shrink: 0;
 }
-
-.loginForm .info {
+.login .info {
   font-size: 36px;
   opacity: .8;
 }
 
-.loginForm a, .infoo {
+.login a, .infoo {
   margin-top: 16px;
   font-size: 28px;
 }
 
-.loginForm select {
+.login select {
 	appearance: none;
   width: 420px;
   height: 320px;
@@ -130,11 +130,11 @@ html, body, .wrapper, .display {
   cursor: pointer;
   transition: .2s;
 }
-.loginForm select:hover {
+.login select:hover {
   background: rgba(255, 255, 255, .1);
 }
 
-.loginForm button {
+.login button {
   width: 420px;
   height: 96px;
   margin-top: 48px;
@@ -149,17 +149,12 @@ html, body, .wrapper, .display {
   transition: .2s;
   white-space: nowrap;
 }
-.loginForm button:active {
+.login button:active {
   background: rgba(255, 255, 255, .5);
 }
 
-.copyright {
-  position: fixed;
-  bottom: 64px;
-}
-.copyright, .copyright a {
+.copyright span {
   font-size: 24px;
-  color: white;
   opacity: .8;
 }
 
