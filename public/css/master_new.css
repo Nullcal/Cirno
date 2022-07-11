@@ -315,6 +315,9 @@ html, body, .wrapper, .display {
 .questInfo {
   padding: 4rem 0;
 }
+.questInfo span{
+  display: block;
+}
 .tQnum {
   font-size: 3rem;
   margin-bottom: 1rem;
