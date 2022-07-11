@@ -81,83 +81,13 @@ html, body, .wrapper, .display {
   flex-direction: column;
 }
 
-
-
-/* Welcome */
-
-
-
-.welcome > div {
+.display > div {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
 }
-
-.logo {
-  min-height: 16rem;
-}
-.logo img {
-  width: 70%;
-  max-width: 40rem;
-}
-
-.login {
-  flex-shrink: 0;
-}
-
-.login .info {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  opacity: .8;
-}
-.login .infoo {
-  margin-top: 1rem;
-  font-size: 2rem;
-}
-
-.login select {
-	appearance: none;
-  width: 30rem;
-  height: 20rem;
-  background: rgba(0, 0, 0, .04);
-  border-radius: 3rem;
-  border: none;
-  outline: none;
-  font-size: 12rem;
-  text-align: center;
-  cursor: pointer;
-}
-
-.login button {
-  width: 30rem;
-  height: 6rem;
-  margin-top: 3rem;
-  margin-bottom: 4rem;
-  border: none;
-  border-radius: 3rem;
-  background: rgba(51, 158, 255, .1);
-  text-align: center;
-  font-size: 3rem;
-  color: #339eff;
-  cursor: pointer;
-  transition: .2s;
-  white-space: nowrap;
-}
-.login button:active {
-  background: rgba(51, 158, 255, .2);
-}
-
-.copyright {
-  margin-top: 3rem;
-}
-.copyright span {
-  font-size: 1.5rem;
-  opacity: .6;
-}
-
 
 
 
@@ -241,6 +171,83 @@ html, body, .wrapper, .display {
 
 
 
+/* 共用 */
+
+
+
+.copyright {
+  margin-top: 3rem;
+}
+.copyright span {
+  font-size: 1.5rem;
+  opacity: .6;
+}
+
+
+
+.login button {
+  width: 30rem;
+  height: 6rem;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  border: none;
+  border-radius: 3rem;
+  background: rgba(51, 158, 255, .1);
+  text-align: center;
+  font-size: 3rem;
+  color: #339eff;
+  cursor: pointer;
+  transition: .2s;
+  white-space: nowrap;
+}
+.login button:active {
+  background: rgba(51, 158, 255, .2);
+}
+
+
+
+/* Welcome */
+
+
+
+.welcome .logo {
+  min-height: 16rem;
+}
+.welcome .logo img {
+  width: 70%;
+  max-width: 40rem;
+}
+
+.login {
+  flex-shrink: 0;
+}
+
+.login .info {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  opacity: .8;
+}
+.login .infoo {
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+
+.login select {
+	appearance: none;
+  width: 30rem;
+  height: 20rem;
+  background: rgba(0, 0, 0, .04);
+  border-radius: 3rem;
+  border: none;
+  outline: none;
+  font-size: 12rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+
 /* 待機画面 */
 
 
@@ -249,56 +256,37 @@ html, body, .wrapper, .display {
   display: none;
 }
 
-.logoContainer {
-  width: 100%;
-  height: calc(30% - 24px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.waitroom .logo {
+  min-height: 16rem;
+  margin-bottom: 4rem;
 }
-.logoContainer .logoSvg {
-  position: inherit;
-  margin: 0;
+.waitroom .logo img {
+  width: 70%;
+  max-width: 40rem;
 }
 
 .whitebg {
-  position: absolute;
-  bottom: 24px;
-  width: calc(100% - 48px);
-  height: 70%;
+  width: 90%;
   border-radius: 64px;
-	background: white;
-	box-shadow: 2px 2px 8px rgba(0,0,0,.4), -2px -2px 8px rgba(255,255,255,.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.waitroom .copyright, .waitroom .copyright a {
-  color: var(--subcolor);
+	background: rgba(0, 0, 0, .05);
 }
 
 .whitebg .sinfo {
   font-size: 36px;
-  color: var(--subcolor);
 }
 
 .whitebg .wscore {
   font-size: 180px;
-  color: var(--subcolor);
 }
 
 .whitebg .plzwait {
   font-size: 36px;
-  color: var(--subcolor);
   margin-bottom: 16px;
   margin-top: 3%;
 }
 .whitebg .plzwaitntc {
   font-size: 28px;
   margin-bottom: 10%;
-  color: var(--subcolor);
 }
 
 .whitebg button {
