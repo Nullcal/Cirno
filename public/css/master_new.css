@@ -616,8 +616,10 @@ html, body, .wrapper, .display {
 }
 .finalview .fSubTitle {
 	font-size: 2rem;
+  opacity: .6;
 }
 
+/* 表彰台 */
 .finalview .fPodium {
   display: flex;
   justify-content: center;
@@ -633,18 +635,21 @@ html, body, .wrapper, .display {
   align-items: center;
   flex-direction: column;
 	width: 33%;
-	background: rgba(255, 255, 255, .3);
 }
+
 .fPodium .fpSt {
 	width: 34%;
 	height: 70%;
+	background: rgba(127, 127, 127, .05);
 	box-shadow: 0 32px 32px rgba(0,0,0,0.3);
 }
 .fPodium .fpNd {
 	height: 55%;
+	background: rgba(127, 127, 127, .1);
 }
 .fPodium .fpRd {
 	height: 40%;
+	background: rgba(127, 127, 127, .15);
 }
 
 .fpSingle .fpTeamname {
@@ -657,6 +662,10 @@ html, body, .wrapper, .display {
 .fpNd .fpTeamname, .fpRd .fpTeamname {
 	top: -10rem;
 	font-size: 7rem;
+}
+
+.fpNd span, .fpRd span {
+  opacity: .8;
 }
 
 .fpSingle .fpPlace {
@@ -685,6 +694,7 @@ html, body, .wrapper, .display {
 	font-size: 3.5rem;
 }
 
+/* 数値的な結果 */
 .finalview .fFinalScore {
 	position: relative;
 	width: 100%;
@@ -697,11 +707,11 @@ html, body, .wrapper, .display {
 	overflow-y: scroll;
 }
 .fFinalScore .tRank {
-	font-size: 48px;
+	font-size: 3rem;
 }
 .fFinalScore .tRankBig {
-	margin: 0 16px;
-	font-size: 96px;
+	margin: 0 1rem;
+	font-size: 6rem;
 	line-height: 96px;
 }
 .fFinalScore .tScoreInfo {
