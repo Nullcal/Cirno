@@ -310,7 +310,6 @@ html, body, .wrapper, .display {
 
 .voteview {
   display: none;
-  overflow: 
 }
 .voteview > div {
   flex-shrink: 0;
@@ -342,16 +341,18 @@ html, body, .wrapper, .display {
 
 .formOuter {
   width: 100%;
+  
   overflow-y: scroll;
 }
 
 .optContainer {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.optContainer input[type=radio] {
-  display: none;
-}
-.optContainer .optionLabel {
+.optionLabel {
   display: flex;
   width: 90%;
   height: 8rem;
@@ -366,6 +367,9 @@ html, body, .wrapper, .display {
   font-weight: 200;
   opacity: .6;
   transition: .1s;
+}
+.optContainer input[type="radio"] {
+  display: none;
 }
 .optContainer input[type="radio"]:checked + .optionLabel {
   border: none;
