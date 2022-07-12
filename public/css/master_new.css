@@ -381,7 +381,7 @@ html, body, .wrapper, .display {
 .optContainer input[type="radio"] {
   display: none;
 }
-.optContainer input[type="radio"]:checked + .optionLabel {
+.optContainer input[type="radio"]:checked + .optionLabel, #correctAns {
   border: none;
   background: rgba(51, 158, 255, .4);
   transform: scale(1.05);
@@ -475,13 +475,6 @@ html, body, .wrapper, .display {
   display: none;
 }
 
-.resultview .taPanel {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-}
 .resultview .tCalc {
 	margin-top: 24px;
 	height: calc(60% - 369px - 72px);
