@@ -44,7 +44,7 @@ for (var i = 0; i < teamdata.length; i++) {
   teamdata[i] = teamdata[i].split(/,/);
 }
 
-let newCsv = teamdata.slice();
+let newCsv = teamdata.slice().splice(-1,1);
 
 // 問題文読み込み
 let quest = JSON.parse(fs.readFileSync("./data/question.json", "utf8"))[0];
@@ -191,6 +191,7 @@ io.on("connection", (socket) => {
       magnif = 0.0;
     }
     result += data.amount * magnif;
+    result = Math.round(result);  // 小数点以下四捨五入
     if (result < 0) {
       result = 0;
     }
@@ -238,7 +239,7 @@ io.on("connection", (socket) => {
       //
       io.emit("referCsv", srccsv);
       //
-      newCsv = teamdata.slice();
+      newCsv = teamdata.slice().splice(-1,1);
       //
       io.emit("showable");
     }
@@ -345,7 +346,7 @@ io.on("connection", (socket) => {
     io.emit("referCsv", srccsv);
     io.emit("referCsvCli");
     //
-    newCsv = teamdata.slice();
+    newCsv = teamdata.slice().splice(-1,1);
   });
   
   // csvリセット（冗長）
@@ -359,7 +360,7 @@ io.on("connection", (socket) => {
     io.emit("referCsv", srccsv);
     io.emit("referCsvCli");
     //
-    newCsv = teamdata.slice();
+    newCsv = teamdata.slice().splice(-1,1);
   });
 
   // ログイン状況取得
