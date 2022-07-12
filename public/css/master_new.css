@@ -347,9 +347,8 @@ html, body, .wrapper, .display {
 }
 
 .optContainer {
-  width: 100%;
   min-height: 8rem;
-  flex: 1 1 auto;
+  justify-content: flex-start;
   overflow-y: auto;
 }
 .optionLabel {
@@ -416,6 +415,10 @@ html, body, .wrapper, .display {
 .tAmountForm .tBetVal {
   color: white;
   font-size: 120px;
+}
+
+.infopanelbtm {
+  display: none !important;
 }
 
 .infopanelbtm .tScoreInfo {
