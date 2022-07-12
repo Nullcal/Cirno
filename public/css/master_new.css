@@ -605,34 +605,35 @@ html, body, .wrapper, .display {
   display: none;
 }
 
+
+.finalview .fPodiumTitle {
+  margin: 6rem 0;
+	width: 100%;
+}
 .finalview .fTitle {
-  margin: 8rem 0;
 	font-size: 6rem;
 	font-weight: 600;
 }
 .finalview .fSubTitle {
 	font-size: 2rem;
 }
-.finalview .fPodiumTitle {
-	height: 32rem;
-}
+
 .finalview .fPodium {
-	width: 100%;
-	height: 32rem;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+	width: 100%;
+	height: 32rem;
 }
+
 .fPodium .fpSingle {
-	position: relative;
-	width: 33%;
-	background: rgba(255, 255, 255, .3);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+	width: 33%;
+	background: rgba(255, 255, 255, .3);
 }
 .fPodium .fpSt {
 	width: 34%;
@@ -646,24 +647,26 @@ html, body, .wrapper, .display {
 	height: 40%;
 }
 
-.fpSt .fpTeamname {
-	top: -204px;
-	font-size: 168px;
-}
-.fpNd .fpTeamname, .fpRd .fpTeamname {
-	top: -160px;
-	font-size: 128px;
-}
 .fpSingle .fpTeamname {
 	position: absolute;
-	color: white;
+}
+.fpSt .fpTeamname {
+	top: -13rem;
+	font-size: 9rem;
+}
+.fpNd .fpTeamname, .fpRd .fpTeamname {
+	top: -10rem;
+	font-size: 7rem;
 }
 
-.fpSingle .fpScore {
-	margin-top: 16px;
-	font-size: 54px;
+.fpSingle .fpPlace {
+	margin-top: 2rem;
+	font-size: 3rem;
+	line-height: 4rem;
+	width: 9rem;
+	text-align: center;
+	border-radius: 2rem;
 }
-
 .fpSt .fpPlace {
 	background-image: linear-gradient(-15deg, #ffd261 50%, #ffe6a6 50%);
 	box-shadow: 0 8px 24px rgb(255, 238, 194);
@@ -676,13 +679,10 @@ html, body, .wrapper, .display {
 	background-image: linear-gradient(-15deg, #ffa97e 50%, #ffc5a8 50%);
 	box-shadow: 0 8px 24px rgb(255, 213, 191);
 }
-.fpSingle .fpPlace {
-	margin-top: 16px;
-	font-size: 48px;
-	line-height: 60px;
-	width: 144px;
-	text-align: center;
-	border-radius: 36px;
+
+.fpSingle .fpScore {
+	margin-top: .75rem;
+	font-size: 3.5rem;
 }
 
 .finalview .fFinalScore {
@@ -724,7 +724,6 @@ html, body, .wrapper, .display {
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-	color: white;
 }
 .fTotalScore .fsbBox {
 	width: 50%;
