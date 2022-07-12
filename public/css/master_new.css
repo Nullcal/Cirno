@@ -504,10 +504,18 @@ html, body, .wrapper, .display {
 }
 
 /* 計算式 */
+.taResultOuter {
+  width: 90%;
+}
+.taResult {
+  padding-left: 2rem;
+}
+
 .correct {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-end;
+  margin-top: 2rem;
 	width: 90%;
 }
 
@@ -523,32 +531,44 @@ html, body, .wrapper, .display {
 	width: 10%;
 }
 
-.tasVal .tasBoxValue {
-  background: rgba(0, 0, 0, .05);
-	border-radius: 1rem;
-}
-
 .tasBox .tasBoxInfo {
 	font-size: 2rem;
-  padding-left: 1rem;
 }
 
-.tasBox .tasBoxValue {
+.tasBoxValue {
 	width: 100%;
 	height: 8rem;
+	line-height: 8rem;
+	font-size: 6rem;
 	text-align: center;
 	border-radius: 1rem;
-	border: 2px solid rgba(255,255,255,.6);
-	font-size: 96px;
-	line-height: 120px;
 }
+.tasVal .tasBoxValue {
+  background: rgba(0, 0, 0, .05);
+}
+
 .tasBox .tasBoxOpera {
-	height: 124px;
-	margin-top: 38px;
+	height: 8rem;
 	text-align: center;
-	font-size: 96px;
+	font-size: 6rem;
 	font-weight: 100;
 }
+
+.getScore {
+	width: 90%;
+}
+.getScore .tasBoxInfo {
+	font-size: 2rem;
+}
+.getScore .tasBoxValue {
+	width: 100%;
+	height: 168px;
+	text-align: center;
+	font-size: 9rem;
+	line-height: 172px;
+	color: white;
+}
+
 .resultview .taRank {
   margin-top: 24px;
   margin-bottom: 12px;
@@ -561,28 +581,6 @@ html, body, .wrapper, .display {
   font-size: 36px;
 	color: white;
 	text-align: center;
-}
-
-.getScore {
-	width: calc(100% - 64px);
-	color: white;
-  display: flex;
-  justify-content: center;
-	align-items: center;
-  flex-direction: column;
-}
-.getScore .tasBoxInfo {
-	font-size: 36px;
-}
-.getScore .tasBoxValue {
-	width: 100%;
-	height: 168px;
-	text-align: center;
-	border-radius: 32px;
-	border: 2px solid rgba(255,255,255,.6);
-	font-size: 144px;
-	line-height: 172px;
-	color: white;
 }
 .resultview .tainfopanelbtm {
   position: absolute;
