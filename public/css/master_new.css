@@ -333,20 +333,27 @@ html, body, .wrapper, .display {
 
 /* 選択肢 */
 .tRadioForm {
-  flex-shrink: 2;
+  max-height: 70rem;
+}
+.tRadioForm > div {
+  width: 100%;
 }
 
-.tSubtitle {
+.tSelectInfo {
   margin: 1rem 0;
   font-size: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
 }
-.tSmallInfo {
-  font-size: 1.5rem;
+.optWrapper {
+  width: 100%;
+  height: calc(100% - 2rem);
 }
 
 .optContainer {
   overflow-y: scroll;
   width: 100%;
+  height: 100%;
 }
 .optContainer input[type=radio] {
   display: none;
