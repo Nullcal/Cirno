@@ -381,10 +381,12 @@ html, body, .wrapper, .display {
 .optContainer input[type="radio"] {
   display: none;
 }
+.optContainer input[type="radio"]:checked + .optionLabel {
+  transform: scale(1.05);
+}
 .optContainer input[type="radio"]:checked + .optionLabel, #correctAns {
   border: none;
   background: rgba(51, 158, 255, .4);
-  transform: scale(1.05);
   opacity: 1;
 }
 
@@ -475,10 +477,13 @@ html, body, .wrapper, .display {
   display: none;
 }
 
-.resultview .tCalc {
-	margin-top: 24px;
-	height: calc(60% - 369px - 72px);
-	overflow-y: scroll;
+.resultview .taPanel {
+  margin-top: -2rem;
+}
+.resultview .taCateam {
+  width: 90%;
+	font-size: 2rem;
+  text-align: end;
 }
 
 .resultview .answerBox {
