@@ -5,6 +5,8 @@ const socket = io.connect();
 
 let loadpast = true;
 
+let ignoreWarn = false;
+
 // デバイスのチーム
 let ownteam = null;
 let ownscore = undefined;
@@ -20,6 +22,13 @@ socket.on("connect", () => {
     console.info("");
   }
 });
+
+// ページ離脱時の処理
+window.onbeforeunload = function(e) {
+  if (!ignoreWarn) {
+    e.returnValue = "ページを離れようとしています。よろしいですか？"; 
+  }
+}
 
 $(function() {
   // セレクトボックスの中身を生成
@@ -195,12 +204,14 @@ $(function() {
 
   // バグ回避のためcsv更新で強制ログアウト
   socket.on("referCsvCli", function() {
+    ignoreWarn = true;
     location.reload();
   });
   
   // 問題を間違えて送信した場合に強制ログアウト＋変更破棄
   socket.on("gameTerminated", function() {
     alert("ゲームが中止されました。タイトル画面に戻ります。");
+    ignoreWarn = true;
     location.reload();
   });
 });

@@ -261,14 +261,10 @@ $(function() {
   
   // チームスコアをリセット
   $("#resetTeamScore").on("click", function() {
-    if (confirm('Are you sure want to save this thing into the database?')) {
-      // Save it!
-      console.log('Thing was saved to the database.');
-    } else {
-      // Do nothing!
-      console.log('Thing was not saved to the database.');
+    // 角煮
+    if (confirm('本当にチームスコアをリセットしてもよろしいですか？')) {
+      socket.emit("resetCsv");
     }
-    socket.emit("resetCsv");
   });
 
   // csvを取得
