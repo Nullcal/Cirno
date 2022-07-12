@@ -365,9 +365,11 @@ html, body, .wrapper, .display {
   text-align: center;
   line-height: 8rem;
   font-size: 3rem;
-  font-weight: 200;
   opacity: .6;
   transition: .1s;
+}
+.optContainer span {
+  font-weight: 400;
 }
 .optContainer input[type="radio"] {
   display: none;
@@ -376,7 +378,6 @@ html, body, .wrapper, .display {
   border: none;
   background: rgba(51, 158, 255, .4);
   transform: scale(1.05);
-  font-weight: 400;
   opacity: 1;
 }
 
