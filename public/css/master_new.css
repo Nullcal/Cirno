@@ -310,6 +310,7 @@ html, body, .wrapper, .display {
 
 .voteview {
   display: none;
+  overflow: 
 }
 .voteview > div {
   flex-shrink: 0;
@@ -413,21 +414,6 @@ html, body, .wrapper, .display {
   font-size: 120px;
 }
 
-.voteview .infopanelbtm {
-  height: 20%;
-  border-radius: 64px;
-	background: white;
-	box-shadow: 2px 2px 8px rgba(0,0,0,.4), -2px -2px 8px rgba(255,255,255,.4);
-}
-.infopanelbtm .score {
-  width: 60%;
-  height: 100%;
-  padding-left: 36px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-}
 .infopanelbtm .tScoreInfo {
   display: block;
   font-size: 36px;
@@ -439,35 +425,6 @@ html, body, .wrapper, .display {
   margin-bottom: 36px;
   font-size: 128px;
   line-height: 96px;
-}
-.infopanelbtm .timer {
-  width: 40%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--subcolor);
-}
-.infopanelbtm .timerFrame {
-  transform: translateY(12px);
-  width: 240px;
-  height: 240px;
-  border-radius: 120px;
-  border: 8px solid var(--subcolor);
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.infopanelbtm .timerFrame::before {
-  position: absolute;
-  top: calc(50% - 120px - 24px + 2px);
-  content: "";
-  width: 48px;
-  height: 24px;
-  border-radius: 12px;
-  background: var(--subcolor);
 }
 .infopanelbtm .tTimerInfo {
   display: block;
