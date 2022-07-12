@@ -116,12 +116,13 @@ io.on("connection", (socket) => {
       let display = qObj.title;
       let options = qObj.options;
       //
+      let initScore = 100;
       clearInterval(timer);
       // 問題表示
       setTimeout(function() {
         // ポイント付与
         for (var i = 0; i < Object.keys(teamscore).length; i++) {
-          teamscore[Object.keys(teamscore)[i]] = parseInt(teamscore[Object.keys(teamscore)[i]]) + 10;
+          teamscore[Object.keys(teamscore)[i]] = parseInt(teamscore[Object.keys(teamscore)[i]]) + initScore;
         }
         //
         limIoEmit("voteView", qNum, display, options, teamscore);
@@ -346,6 +347,9 @@ io.on("connection", (socket) => {
     //
     newCsv = teamdata.slice();
   });
+  
+  // csvリセット
+  socket.on("")
 
   // ログイン状況取得
   socket.on("getLoginStatus", function() {

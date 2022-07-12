@@ -159,13 +159,13 @@ body {
   cursor: pointer;
   transition: .2s;
 }
-#killgame {
+#killGame {
 	background: #FFCEF3;
 }
 .settingPanel button:active {
   opacity: .8;
 }
-.settingPanel .mainButton:disabled, #forceTerminate:disabled {
+.settingPanel .mainButton:disabled, #killGame:disabled {
   background: #e6e6e6;
 }
 
