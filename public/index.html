@@ -32,7 +32,8 @@
           <button id="login" class="blue-button" type="button">ゲームに参加！</button>
           <span class="infoo"><a href="/admin">学年企画委員の方はこちら</a></span>
           <span class="infoo"><a href="/scoreboard">すべてのランキングはこちら</a></span>
-          <span class="infoo" style="font-weight: bold">プレイ中はページを閉じないでください</span>
+          <span class="infoo" style="font-weight: bold">プレイ中はページを常に表示してください</span>
+          <span class="infoo">選択肢はスクロールすることができます</span>
         </div>
         <div class="copyright">
           <span>(C) 2022 学年企画実行委員・<a href="https://github.com/Nullcal" target="_blank" rel="noopener noreferrer">ぬるかる</a></span>
@@ -70,12 +71,14 @@
         <form id="optContainer" class="optContainer"></form>
         <div class="tAmountForm">
           <span class="tSubtitle">賭け金を決定</span>
-          <span class="tBetVal">0P</span>
+          <span>
+            <span class="tBetVal">0P</span>
+            <span class="ownScoreVal">/<span class="tScoreVal"></span></span>
+          </span>
           <input id="rBetVal" type="range" name="" value="10" step="10" min="10">
           </div>
         <div class="infopanelbtm">
-          <span class="tScoreInfo">現在のポイント</span>
-          <span class="tScoreVal"></span>
+          
           <span class="tTimerInfo">残り時間</span>
           <span class="tTimerVal">99:99</span>
         </div>

@@ -316,7 +316,8 @@ html, body, .wrapper, .display {
 
 /* 問題文等 */
 .questInfo {
-  margin: 4rem 0;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
 }
 .questInfo span{
   display: block;
@@ -419,13 +420,16 @@ html, body, .wrapper, .display {
   transform: scale(1.2);
 }
 
-.tAmountForm .tSubtitle {
+.voteview .tSubtitle {
   margin-top: 2rem;
   font-size: 3rem;
 }
 
 .tAmountForm .tBetVal {
   font-size: 8rem;
+}
+.tAmountForm .ownScoreVal {
+  font-size: 4rem;
 }
 
 /* タイマー等補足情報 */
@@ -438,12 +442,6 @@ html, body, .wrapper, .display {
   font-size: 36px;
   margin-bottom: 16px;
   color: var(--subcolor);
-}
-.infopanelbtm .tScoreVal {
-  margin-left: 48px;
-  margin-bottom: 36px;
-  font-size: 128px;
-  line-height: 96px;
 }
 .infopanelbtm .tTimerInfo {
   display: block;
