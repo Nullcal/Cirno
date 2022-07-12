@@ -382,6 +382,9 @@ body {
   color: white;
   transition: .2s;
 }
+#resetTeamScore {
+  line-height: 92px;
+}
 
 
 

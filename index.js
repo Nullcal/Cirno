@@ -335,7 +335,7 @@ io.on("connection", (socket) => {
   });
 
   // csv更新
-  socket.on("refreshCvs", function(file) {
+  socket.on("refreshCsv", function(file) {
     srccsv = file;
     teamdata = srccsv.split(/\r\n|\n/g);
     for (var i = 0; i < teamdata.length; i++) {
@@ -348,8 +348,19 @@ io.on("connection", (socket) => {
     newCsv = teamdata.slice();
   });
   
-  // csvリセット
-  socket.on("")
+  // csvリセット（冗長）
+  socket.on("resetCsv", function() {
+    let srccsv = fs.readFileSync("./data/teamdata_backup.csv", "utf8");
+    teamdata = srccsv.split(/\r\n|\n/g);
+    for (var i = 0; i < teamdata.length; i++) {
+      teamdata[i] = teamdata[i].split(/,/);
+    }
+    //
+    io.emit("referCsv", srccsv);
+    io.emit("referCsvCli");
+    //
+    newCsv = teamdata.slice();
+  });
 
   // ログイン状況取得
   socket.on("getLoginStatus", function() {

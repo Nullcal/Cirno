@@ -254,9 +254,21 @@ $(function() {
     let reader = new FileReader();
     reader.onload = function() {
       let file = atob(reader.result.split(",")[1]);
-      socket.emit("refreshCvs", file);
+      socket.emit("refreshCsv", file);
     }
     reader.readAsDataURL(url);
+  });
+  
+  // チームスコアをリセット
+  $("#resetTeamScore").on("click", function() {
+    if (confirm('Are you sure want to save this thing into the database?')) {
+      // Save it!
+      console.log('Thing was saved to the database.');
+    } else {
+      // Do nothing!
+      console.log('Thing was not saved to the database.');
+    }
+    socket.emit("resetCsv");
   });
 
   // csvを取得
