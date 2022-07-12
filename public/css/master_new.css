@@ -433,26 +433,15 @@ html, body, .wrapper, .display {
 }
 
 /* タイマー等補足情報 */
-.infopanelbtm {
-  display: none !important;
+#timerWrapper {
+  position: fixed;
+  width: auto;
+  top: 1rem;
+  right: 2rem;
 }
-
-.infopanelbtm .tScoreInfo {
-  display: block;
-  font-size: 36px;
-  margin-bottom: 16px;
-  color: var(--subcolor);
+.tTimerVal {
+  font-size: 3rem;
 }
-.infopanelbtm .tTimerInfo {
-  display: block;
-  font-size: 24px;
-}
-.infopanelbtm .tTimerVal {
-  display: block;
-  font-size: 72px;
-  margin-bottom: 24px;
-}
-
 
 
 .timeisup {
