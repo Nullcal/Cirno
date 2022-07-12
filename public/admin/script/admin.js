@@ -84,6 +84,7 @@ $(function() {
   socket.on("showable", function() {
     $("#showAnswer").attr("disabled", false);
     $("#forceTerminate").attr("disabled", true);
+    $("#killGame").attr("disabled", true);
   });
 
   // 結果表示へ遷移
@@ -199,11 +200,17 @@ $(function() {
   $("#forceTerminate").on("click", function() {
     socket.emit("terminateReq", quse);
   });
+  
+  // ゲームデータ破棄
+  $("#killGame").on("click", function() {
+    socket.emit("terminateReqDiscard", quse);
+  });
 
   // 重複起動防止
   socket.on("unrestartable", function() {
     $("#startGame").attr("disabled", true);
     $("#forceTerminate").attr("disabled", false);
+    $("#killGame").attr("disabled", false);
   });
 
   // 一覧リセット

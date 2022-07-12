@@ -31,6 +31,7 @@ let correctTeams = 0;
 let correspo = {};
 
 // タイマー管理用
+let timer;
 let left;
 
 // 問題情報
@@ -115,7 +116,6 @@ io.on("connection", (socket) => {
       let display = qObj.title;
       let options = qObj.options;
       //
-      let timer;
       clearInterval(timer);
       // 問題表示
       setTimeout(function() {
@@ -319,6 +319,13 @@ io.on("connection", (socket) => {
   // ゲーム終了
   socket.on("terminateReq", function() {
     left = 0;
+  });
+  
+  // ゲーム終了(破棄)
+  socket.on("terminateReqDiscard", function() {
+    clearInterval(timer);
+    //
+    io.emit("savescc");
   });
 
   // csv取得
