@@ -477,17 +477,30 @@ html, body, .wrapper, .display {
   display: none;
 }
 
+.taPanel {
+  margin-top: 2rem;
+}
+
 .tCaOuter {
   display: flex;
   width: 90%;
 	font-size: 2rem;
   text-align: end;
+  align-items: flex-end;
 }
+
 .tCaOuter .tSubtitle {
   text-align: start;
+  margin-top: 0;
+  padding-left: 2rem;
+  flex-grow: 2;
 }
 .tCaOuter .taCateam {
   text-align: end;
+}
+
+#correctAns .tOptName {
+  font-weight: 500;
 }
 
 .resultview .answerBox {
@@ -520,8 +533,7 @@ html, body, .wrapper, .display {
 }
 
 .resultview .correct {
-	width: calc(100% - 64px);
-	color: rgba(255,255,255,.6);
+	width: 90%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
