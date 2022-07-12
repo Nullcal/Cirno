@@ -559,92 +559,39 @@ html, body, .wrapper, .display {
 	width: 90%;
   margin-top: 2rem;
 }
+.getScore .tasBoxValue {
+  background: rgba(0, 0, 0, .05);
+}
+.tatScoreVal {
+  font-weight: 500;
+}
 .getScore .tasBoxValue, .tatScoreVal {
 	width: 100%;
 	height: 10rem;
 	text-align: center;
-	font-size: 10rem;
+	font-size: 9rem;
 	line-height: 10rem;
 }
 
-.resultview .taRank {
-  margin-top: 24px;
-  margin-bottom: 12px;
-	text-align: right;
-	width: calc(100% - 64px);
-  font-size: 48px;
-}
 .resultview .tqInfo {
-  font-size: 36px;
+  margin-top: 2rem;
+  margin-bottom: 6rem;
+  font-size: 2.5rem;
 	text-align: center;
 }
-.resultview .tainfopanelbtm {
-  width: 90%;
-  height: 20%;
-  border-radius: 64px;
-	background: white;
-	box-shadow: 2px 2px 8px rgba(0,0,0,.4), -2px -2px 8px rgba(255,255,255,.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.resultview .taRank {
+  position: fixed;
+  bottom: 2rem;
+  right: 4rem;
+	text-align: right;
+  font-size: 2rem;
+  opacity: .6;
 }
 
-.tainfopanelbtm .tascore {
-  width: 60%;
-  height: 100%;
-  padding-left: 36px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-}
-.tainfopanelbtm .tatScoreInfo {
-	width: 100%;
-	text-align: left;
-  display: block;
-  font-size: 36px;
-  margin-bottom: 16px;
-  color: var(--subcolor);
-}
-.tainfopanelbtm .tatScoreVal {
-	width: 100%;
-	text-align: center;
-  margin-bottom: 36px;
-  font-size: 128px;
-  line-height: 96px;
-}
 
-.tasBalloon {
-  width: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.taBalloon {
-	position: relative;
-  display: inline-block;
-  padding: 0 5px;
-  width: 156px;
-  height: 156px;
-  line-height: 156px;
-  text-align: center;
-  color: #FFF;
-  font-size: 32px;
-  font-weight: bold;
-  background: var(--subcolor);
-  border-radius: 50%;
-  box-sizing: border-box;
-}
-.taBalloon:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -40px;
-  margin-top: -25px;
-  border: 25px solid transparent;
-  border-right: 25px solid var(--subcolor);
-  z-index: 0;
-}
+
+/* 最終結果 */
 
 
 
