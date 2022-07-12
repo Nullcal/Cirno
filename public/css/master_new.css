@@ -477,12 +477,16 @@ html, body, .wrapper, .display {
   display: none;
 }
 
-.resultview .taPanel {
-  margin-top: -2rem;
-}
-.resultview .taCateam {
+.tCaOuter {
+  display: flex;
   width: 90%;
 	font-size: 2rem;
+  text-align: end;
+}
+.tCaOuter .tSubtitle {
+  text-align: start;
+}
+.tCaOuter .taCateam {
   text-align: end;
 }
 
