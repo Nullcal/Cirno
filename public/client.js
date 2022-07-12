@@ -141,11 +141,9 @@ $(function() {
     if (isCorrect) {
       $(".taResult").text(`おめでとう！`);
       $(".tasGetScore").text(`${amount*magnif}P`);
-      $(".taBalloon").html(`+${amount*magnif}P`);
     } else {
       $(".taResult").text(`残念...`);
       $(".tasGetScore").text(`-${amount}P`);
-      $(".taBalloon").html(`-${amount}P`);
     }
     $(".taTitle").text(`${cOption}`);
     $(".taMagnif").text(`x${cMagnif}`);
