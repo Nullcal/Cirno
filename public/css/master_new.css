@@ -346,9 +346,11 @@ html, body, .wrapper, .display {
   overflow-y: scroll;
 }
 
+#optContainer {
+  justify-content: flex-start;
+}
 .optContainer {
   min-height: 8rem;
-  justify-content: flex-start;
   overflow-y: auto;
 }
 .optionLabel {
