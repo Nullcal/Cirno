@@ -324,8 +324,8 @@ io.on("connection", (socket) => {
   // ゲーム終了(破棄)
   socket.on("terminateReqDiscard", function() {
     clearInterval(timer);
-    //
-    io.emit("savescc");
+    // ゲーム終了
+    io.emit("gameTerminated");
   });
 
   // csv取得

@@ -96,6 +96,13 @@ $(function() {
     // 順位更新
     socket.emit("refreshPod");
   });
+  
+  // 強制終了時にデータ破棄
+  socket.on("gameTerminated", function() {
+    $("#startGame").attr("disabled", false);
+    $("#forceTerminate").attr("disabled", true);
+    $("#killGame").attr("disabled", true);
+  });
 
   // 解答設定
   $(document).on("click", ".setAns", function() {
