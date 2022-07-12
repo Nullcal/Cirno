@@ -389,6 +389,10 @@ html, body, .wrapper, .display {
 }
 
 /* ベット額指定 */
+.tAmountForm {
+  margin-bottom: 6rem;
+}
+
 .tAmountForm input[type=number] {
   -webkit-appearance: none;
   appearance: none;
@@ -409,10 +413,17 @@ html, body, .wrapper, .display {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
+  transition: .2s;
 }
 .tAmountForm input[type=range]:hover::-webkit-slider-thumb {
-  border: .8rem solid rgba(51, 158, 255, .4);
+  transform: scale(1.2);
 }
+
+.tAmountForm .tSubtitle {
+  margin-top: 2rem;
+  font-size: 3rem;
+}
+
 .tAmountForm .tBetVal {
   font-size: 8rem;
 }
