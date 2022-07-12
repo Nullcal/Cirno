@@ -503,69 +503,41 @@ html, body, .wrapper, .display {
   font-weight: 500;
 }
 
-.resultview .answerBox {
-	width: calc(100% - 96px);
-	padding: 16px;
-	border-radius: 48px;
-	background: white;
-	box-shadow: 2px 2px 8px rgba(0,0,0,.4), -2px -2px 8px rgba(255,255,255,.4);
+/* 計算式 */
+.correct {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-}
-
-.answerBox * {
-	width: 100%;
-}
-.answerBox .taCateam {
-	font-size: 36px;
-	text-align: right;
-}
-.answerBox .taTitle {
-	font-size: 72px;
-	font-weight: 500;
-	text-align: center;
-}
-.answerBox .taMagnif {
-	font-size: 36px;
-	text-align: center;
-}
-
-.resultview .correct {
+  justify-content: center;
+  align-items: flex-start;
 	width: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
 }
 
-.resultview .tasBox {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-}
-
-.resultview .tasAmount {
+.tasAmount {
 	width: 55%;
 }
-.resultview .tasMagnif {
+.tasMagnif {
 	width: 25%;
 }
-.resultview .tasOpera {
-	align-items: center;
+
+.tasOpera {
   justify-content: flex-end;
 	width: 10%;
 }
 
-.tasBox .tasBoxInfo {
-	font-size: 28px;
+.tasVal .tasBoxValue {
+  background: rgba(0, 0, 0, .05);
+	border-radius: 1rem;
 }
+
+.tasBox .tasBoxInfo {
+	font-size: 2rem;
+  padding-left: 1rem;
+}
+
 .tasBox .tasBoxValue {
 	width: 100%;
-	height: 120px;
+	height: 8rem;
 	text-align: center;
-	border-radius: 16px;
+	border-radius: 1rem;
 	border: 2px solid rgba(255,255,255,.6);
 	font-size: 96px;
 	line-height: 120px;
