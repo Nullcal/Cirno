@@ -188,15 +188,7 @@ $(function() {
         $(".tScore").html(`${data.rank[i][1]}P`);
         parescore += parseInt(data.rank[i][1]);
       }
-      // ペアチーム
-      if (data.rank[i][0] == pareteam) {
-        $(".tpScoreInfo").html(`チーム${pareteam}のスコア`);
-        $(".tpScore").html(`${data.rank[i][1]}P`);
-        parescore += parseInt(data.rank[i][1]);
-      }
     }
-    // 合計スコア表示
-    $(".ttScore").html(`${parescore}P`);
     //
     transMove($(".resultview"), $(".finalview"), 0);
   });
