@@ -201,6 +201,34 @@ html, body, .wrapper, .display {
   background: rgba(51, 158, 255, .2);
 }
 
+/* 問題文等 */
+.display .questInfo {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+.display .questInfo span{
+  display: block;
+}
+
+.display .tQnum {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+.display .tQuest {
+  min-height: 8rem;
+  padding: 0 4rem;
+  line-height: 4.2rem;
+  font-size: 4rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+/* 標準テキスト */
+.display .tSubtitle {
+  margin-top: 2rem;
+  font-size: 3rem;
+}
+
 
 
 /* Welcome */
@@ -314,27 +342,6 @@ html, body, .wrapper, .display {
   flex-shrink: 0;
 }
 
-/* 問題文等 */
-.questInfo {
-  margin-top: 4rem;
-  margin-bottom: 2rem;
-}
-.questInfo span{
-  display: block;
-}
-.tQnum {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-}
-.tQuest {
-  min-height: 8rem;
-  padding: 0 4rem;
-  line-height: 4.2rem;
-  font-size: 4rem;
-  font-weight: 800;
-  text-align: center;
-}
-
 /* 選択肢 */
 .tRadioForm {
   flex-shrink: 100;
@@ -420,11 +427,6 @@ html, body, .wrapper, .display {
   transform: scale(1.2);
 }
 
-.voteview .tSubtitle {
-  margin-top: 2rem;
-  font-size: 3rem;
-}
-
 .tAmountForm .tBetVal {
   font-size: 8rem;
 }
@@ -465,38 +467,12 @@ html, body, .wrapper, .display {
 
 
 
+/* 結果表示 */
+
+
+
 .resultview {
   display: none;
-  width: 100%;
-  height: 100%;
-}
-
-.tResult {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-}
-
-.resultview .questInfo {
-  width: 100%;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.resultview .tQnum {
-  font-size: 48px;
-}
-.resultview .tQuest {
-  font-size: 72px;
-	font-family: "Nicomoji", sans-serif;
-  text-align: center;
 }
 
 .resultview .taPanel {
@@ -511,13 +487,7 @@ html, body, .wrapper, .display {
 	height: calc(60% - 369px - 72px);
 	overflow-y: scroll;
 }
-.resultview .tSubtitle {
-  margin-top: 24px;
-  margin-bottom: 12px;
-  transform: translateX(calc(-50vw + 50% + 36px));
-  font-size: 48px;
-	color: white;
-}
+
 .resultview .answerBox {
 	width: calc(100% - 96px);
 	padding: 16px;
