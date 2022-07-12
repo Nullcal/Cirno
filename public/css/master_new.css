@@ -436,12 +436,19 @@ html, body, .wrapper, .display {
 #timerWrapper {
   position: fixed;
   width: auto;
-  top: 1rem;
-  right: 2rem;
+  top: 2rem;
+  right: 4rem;
 }
 .tTimerVal {
   font-size: 3rem;
+  font-weight: 500;
+  color: #339eff;
 }
+
+
+
+/* タイムアップ遷移画面 */
+
 
 
 .timeisup {
@@ -451,7 +458,6 @@ html, body, .wrapper, .display {
 .timeisup .bigtitle {
   font-size: 12rem;
 }
-
 .timeisup .subtitle {
 	margin-top: 2rem;
   font-size: 2rem;
