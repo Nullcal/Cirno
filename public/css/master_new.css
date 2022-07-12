@@ -332,6 +332,10 @@ html, body, .wrapper, .display {
 }
 
 /* 選択肢 */
+.tRadioForm {
+  flex-shrink: 2;
+}
+
 .tSubtitle {
   margin: 1rem 0;
   font-size: 2rem;
@@ -380,13 +384,8 @@ html, body, .wrapper, .display {
 }
 
 /* ベット量指定 */
-.voteview .tAmountForm {
-  width: 100%;
+.tAmountForm {
   height: 30%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 .tAmountForm input[type=number] {
   -webkit-appearance: none;
@@ -416,16 +415,10 @@ html, body, .wrapper, .display {
 }
 
 .voteview .infopanelbtm {
-  position: absolute;
-  bottom: 24px;
-  width: calc(100% - 48px);
   height: 20%;
   border-radius: 64px;
 	background: white;
 	box-shadow: 2px 2px 8px rgba(0,0,0,.4), -2px -2px 8px rgba(255,255,255,.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .infopanelbtm .score {
   width: 60%;
