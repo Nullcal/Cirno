@@ -602,38 +602,23 @@ html, body, .wrapper, .display {
 
 
 .finalview {
-	font-family: sans-serif;
   display: none;
-	justify-content: flex-start;
 }
-.finalview .fPodiumBox {
-	width: 100%;
-	height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+
 .finalview .fTitle {
-	font-size: 96px;
-	font-weight: 500;
-	font-family: "Nicomoji", sans-serif;
-	color: white;
+  margin: 8rem 0;
+	font-size: 6rem;
+	font-weight: 600;
 }
 .finalview .fSubTitle {
-	font-size: 36px;
-	color: white;
+	font-size: 2rem;
 }
 .finalview .fPodiumTitle {
-	height: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-	flex-direction: column;
+	height: 32rem;
 }
 .finalview .fPodium {
 	width: 100%;
-	height: 60%;
+	height: 32rem;
   display: flex;
   justify-content: center;
   align-items: flex-end;
