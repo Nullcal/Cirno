@@ -44,7 +44,7 @@ for (var i = 0; i < teamdata.length; i++) {
   teamdata[i] = teamdata[i].split(/,/);
 }
 
-let newCsv = teamdata.slice().splice(-1,1);
+let newCsv = teamdata.slice();
 
 // 問題文読み込み
 let quest = JSON.parse(fs.readFileSync("./data/question.json", "utf8"))[0];
@@ -228,6 +228,7 @@ io.on("connection", (socket) => {
       }
       // csv書き込み
       newCsv = newCsv.join("\r\n");
+      console.log(newCsv);
       fs.writeFileSync("./data/teamdata.csv", newCsv);
       console.log(`\x1b[44mAD_CSV \x1b[49m : Updated teamdata.csv by ${socket.id}`);
       //
@@ -239,7 +240,7 @@ io.on("connection", (socket) => {
       //
       io.emit("referCsv", srccsv);
       //
-      newCsv = teamdata.slice().splice(-1,1);
+      newCsv = teamdata.slice();
       //
       io.emit("showable");
     }
@@ -346,7 +347,7 @@ io.on("connection", (socket) => {
     io.emit("referCsv", srccsv);
     io.emit("referCsvCli");
     //
-    newCsv = teamdata.slice().splice(-1,1);
+    newCsv = teamdata.slice();
   });
   
   // csvリセット（冗長）
@@ -360,7 +361,7 @@ io.on("connection", (socket) => {
     io.emit("referCsv", srccsv);
     io.emit("referCsvCli");
     //
-    newCsv = teamdata.slice().splice(-1,1);
+    newCsv = teamdata.slice();
   });
 
   // ログイン状況取得
